@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url><loc>https://live-city-life-anywhere.vercel.app/</loc><lastmod>2026-11-15</lastmod></url>
-<url><loc>https://live-city-life-anywhere.vercel.app/power/</loc><lastmod>2026-11-15</lastmod></url>
+<url><loc>https://live-city-life-anywhere.vercel.app/power/</loc><lastmod>2026-11-16</lastmod></url>
 <url><loc>https://live-city-life-anywhere.vercel.app/water/</loc><lastmod>2026-11-15</lastmod></url>
-<url><loc>https://live-city-life-anywhere.vercel.app/heat-air/</loc><lastmod>2026-11-15</lastmod></url>
+<url><loc>https://live-city-life-anywhere.vercel.app/heat-air/</loc><lastmod>2026-11-16</lastmod></url>
+<url><loc>https://live-city-life-anywhere.vercel.app/heat-air/furnace-outage-runtime/</loc><lastmod>2026-11-16</lastmod></url>
 <url><loc>https://live-city-life-anywhere.vercel.app/safety/</loc><lastmod>2026-11-15</lastmod></url>
 <url><loc>https://live-city-life-anywhere.vercel.app/safety/smoke-co-alarm-planner/</loc><lastmod>2026-11-15</lastmod></url>
 <url><loc>https://live-city-life-anywhere.vercel.app/guides/index.html</loc><lastmod>2026-11-15</lastmod></url>

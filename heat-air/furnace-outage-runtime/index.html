@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Power's Out, Furnace Won't Run: How Long Will a Power Station Keep the Heat On?</title>
+<meta name="description" content="Gas furnace dead in an outage? Pick your blower, how cold it is and your power station size. Get hours of heat, the battery you need for the night, and the surge rating to look for.">
+<link rel="canonical" href="https://live-city-life-anywhere.vercel.app/heat-air/furnace-outage-runtime/">
+<meta property="og:title" content="Power's Out, Furnace Won't Run: How Long Will a Power Station Keep the Heat On?">
+<meta property="og:description" content="Gas furnace dead in an outage? Pick your blower, how cold it is and your power station size. Get hours of heat, the battery you need for the night, and the surge rating to look for.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://live-city-life-anywhere.vercel.app/heat-air/furnace-outage-runtime/">
+<meta name="theme-color" content="#2c4bb5">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/styles.css">
+<style>
+.fo{max-width:760px;margin:0 auto;padding:14px 18px 8px}
+.fo h1{font-size:clamp(1.5rem,5vw,2.2rem);margin:.25em 0 .2em}
+.fo .blunt{margin:0 0 12px;color:var(--muted)}
+.fo .card{background:#fff;border:1px solid var(--stone);border-radius:16px;padding:14px;margin:0 0 12px;box-shadow:0 8px 24px -18px rgba(30,53,127,.5)}
+.fo .step{font-weight:700;margin:0 0 8px;font-size:.98rem}
+.fo .step span{display:inline-block;width:26px;height:26px;border-radius:50%;background:var(--horizon);color:#fff;text-align:center;line-height:26px;margin-right:6px;font-size:.85rem}
+.fo .seg{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+@media(min-width:560px){.fo .seg.s4{grid-template-columns:repeat(4,1fr)}.fo .seg.s3{grid-template-columns:repeat(3,1fr)}}
+.fo .seg button{min-height:58px;border:2px solid var(--stone);background:var(--stone-2);border-radius:12px;font:inherit;font-weight:700;color:var(--ink);cursor:pointer;padding:6px 8px;line-height:1.2}
+.fo .seg button small{display:block;font-weight:500;font-size:.78rem;color:var(--muted)}
+.fo .seg button[aria-pressed=true]{border-color:var(--horizon);background:#e6ecfb;box-shadow:inset 0 0 0 1px var(--horizon)}
+.fo .custom{margin-top:8px;display:none}.fo .custom.on{display:block}
+.fo .custom input{width:100%;min-height:48px;font:inherit;padding:8px 12px;border:2px solid var(--stone);border-radius:10px;box-sizing:border-box}
+.fo .out{background:var(--ink);color:#fff;border-radius:16px;padding:16px;margin:0 0 12px}
+.fo .big{font-family:var(--display);font-size:clamp(2.2rem,9vw,3.4rem);font-weight:700;line-height:1}
+.fo .big small{font-size:.4em;font-weight:600;opacity:.85}
+.fo .verdict{margin:.5em 0 .7em;font-weight:700}
+.fo .verdict.bad{color:#ffb4a9}.fo .verdict.ok{color:#9fe3c0}.fo .verdict.warn{color:#ffd88a}
+.fo .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.fo .stats div{background:rgba(255,255,255,.08);border-radius:10px;padding:8px 10px;font-size:.85rem}
+.fo .stats b{display:block;font-family:var(--mono);font-size:1.15rem}
+.fo .shop{display:grid;gap:8px;margin-top:12px}
+.fo .shop a{display:flex;align-items:center;justify-content:center;min-height:52px;border-radius:999px;background:var(--sun);color:#3b2600;font-weight:800;text-decoration:none;text-align:center;padding:8px 14px}
+.fo .shop a.alt{background:#fff;color:var(--horizon-deep)}
+.fo .fine{font-size:.82rem;opacity:.85;margin:.6em 0 0}
+.fo .xl{display:grid;gap:8px}@media(min-width:560px){.fo .xl{grid-template-columns:repeat(3,1fr)}}
+.fo .xl a{display:block;background:#fff;border:1px solid var(--stone);border-left:6px solid var(--horizon);border-radius:12px;padding:10px 12px;text-decoration:none;color:var(--ink);font-weight:700}
+.fo .xl a span{display:block;font-weight:500;font-size:.85rem;color:var(--muted)}
+.fo ul.facts{padding-left:1.1em;margin:.3em 0}.fo ul.facts li{margin:.25em 0}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="wrap bar">
+<a class="brand" href="/"><span class="sunmark" aria-hidden="true"></span><span>Live City Life, <em>Anywhere</em></span></a>
+<nav class="nav" aria-label="Main"><a href="/power/">Power</a><a href="/water/">Water</a><a href="/heat-air/" aria-current="page">Heat &amp; Air</a><a href="/safety/">Safety</a><a href="/about.html">About</a></nav>
+</div></header>
+<div class="disclose"><div class="wrap"><p><strong>Disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. Amazon links are marked; we never show prices or ratings because they change. <a href="/about.html#disclosure">More</a></p></div></div>
+<main id="main">
+<div class="fo">
+<p class="crumbs"><a href="/">Hub</a> › <a href="/heat-air/">Heat &amp; Air</a> › Furnace outage runtime</p>
+<h1>Power's out. Gas furnace won't run.</h1>
+<p class="blunt">Your gas is fine. The blower and controls need electricity. Tap 4 buttons: get hours of heat from a power station.</p>
+
+<div class="card"><p class="step"><span>1</span>Furnace blower</p>
+<div class="seg s4" id="g-blower">
+<button type="button" data-v="psc">Older furnace<small>~550 W (1/2 HP)</small></button>
+<button type="button" data-v="ecm">Newer / variable-speed<small>~420 W</small></button>
+<button type="button" data-v="big">Big 3/4–1 HP<small>~875 W</small></button>
+<button type="button" data-v="custom">I know my watts<small>from a meter</small></button>
+</div>
+<div class="custom" id="c-blower"><label for="i-blower">Running watts (whole furnace, measured)</label><input id="i-blower" type="number" inputmode="numeric" min="50" max="3000" step="10" value="500"></div>
+</div>
+
+<div class="card"><p class="step"><span>2</span>How cold is it?</p>
+<div class="seg s4" id="g-duty">
+<button type="button" data-v="0.3">Mild<small>runs ~30%</small></button>
+<button type="button" data-v="0.5">Cold<small>runs ~50%</small></button>
+<button type="button" data-v="0.7">Bitter<small>runs ~70%</small></button>
+<button type="button" data-v="1">Nonstop<small>worst case</small></button>
+</div></div>
+
+<div class="card"><p class="step"><span>3</span>Power station size</p>
+<div class="seg s4" id="g-wh">
+<button type="button" data-v="1024">~1 kWh<small>1,024 Wh</small></button>
+<button type="button" data-v="2048">~2 kWh<small>2,048 Wh</small></button>
+<button type="button" data-v="3840">~3.8 kWh<small>3,840 Wh</small></button>
+<button type="button" data-v="custom">Other<small>type Wh</small></button>
+</div>
+<div class="custom" id="c-wh"><label for="i-wh">Battery capacity (Wh, on the label)</label><input id="i-wh" type="number" inputmode="numeric" min="100" max="60000" step="10" value="5000"></div>
+</div>
+
+<div class="card"><p class="step"><span>4</span>Also running? <small style="font-weight:500;color:var(--muted)">(tap any)</small></p>
+<div class="seg s4" id="g-extra" data-multi="1">
+<button type="button" data-v="fridge">Fridge<small>~50 W avg</small></button>
+<button type="button" data-v="sump">Sump pump<small>~130 W avg</small></button>
+<button type="button" data-v="cpap">CPAP<small>~56 W</small></button>
+<button type="button" data-v="net">Wi-Fi + lights<small>~30 W</small></button>
+</div></div>
+
+<div class="card"><p class="step"><span>5</span>How long must it last?</p>
+<div class="seg s4" id="g-target">
+<button type="button" data-v="8">One night<small>8 h</small></button>
+<button type="button" data-v="12">12 h</button>
+<button type="button" data-v="24">A full day<small>24 h</small></button>
+<button type="button" data-v="48">Two days<small>48 h</small></button>
+</div></div>
+
+<div class="out" aria-live="polite" id="out">
+<div class="big" id="o-hours">—</div>
+<p class="verdict" id="o-verdict"></p>
+<div class="stats">
+<div>Average draw<b id="o-avg">—</b></div>
+<div>Battery for your target<b id="o-need">—</b></div>
+<div>Continuous output needed<b id="o-cont">—</b></div>
+<div>Surge rating to look for<b id="o-surge">—</b></div>
+</div>
+<div class="shop" id="o-shop"></div>
+<p class="fine">Math: usable Wh = capacity × 85% (inverter loss) ÷ average watts. Average = furnace watts × share of time it runs + extras. Estimates, not guarantees. Your nameplate or a plug-in meter beats our defaults.</p>
+</div>
+
+<div class="card" style="border-left:6px solid var(--bad)"><p class="step" style="margin-bottom:4px">Before you plug anything in</p>
+<ul class="facts">
+<li>Most furnaces are hardwired. Have a licensed electrician add a furnace transfer switch or inlet. No back-feeding through an outlet.</li>
+<li>Newer furnaces can need a neutral-bonding plug or a station with a bonded neutral to light. Check the manual.</li>
+<li>Fuel generators go outside, 20 ft from doors and windows. Running gas heat? Test your CO alarms: <a href="/safety/smoke-co-alarm-planner/">CO alarm planner</a>.</li>
+<li>Turning the thermostat down a few degrees lowers how often it runs, so the battery lasts longer.</li>
+</ul></div>
+
+<div class="xl">
+<a href="https://wellpump-generator-planner.vercel.app/">Power: generator sizing<span>Well pump + furnace + fridge surge math</span></a>
+<a href="https://space-heater-planner.vercel.app/">Heat: space heater planner<span>Will it trip the breaker? Cost vs gas</span></a>
+<a href="/safety/smoke-co-alarm-planner/">Safety: CO alarms<span>Expiry dates + where to put them</span></a>
+</div>
+<p class="fine" style="color:var(--muted)">Wattage defaults: ~550 W (older PSC) and ~420 W (brushless) blower draw from a DOE Building America field study; 875 W for a larger fan from Honda's generator wattage chart; CPAP 56 W from ResMed's AirSense 11 typical use. Fridge, sump and Wi-Fi averages are rough estimates, labeled as such.</p>
+</div>
+</main>
+</main>
+<footer class="foot">
+<div class="wrap grid buckets-foot">
+<div><b>Live City Life, Anywhere</b>
+<p>Guides and free planners for keeping water, lights, heat and a cold fridge when you live off the municipal grid or ride out outages.</p>
+<p><strong>Planning information only.</strong> This is not professional electrical, plumbing or well-system advice. Check nameplates and manufacturer charts, and use a licensed electrician or well contractor for anything wired or plumbed into your home.</p></div>
+<div><b>Power</b><ul>
+<li><a href="https://wellpump-generator-planner.vercel.app/">Well Pump Generator Planner</a></li>
+<li><a href="/guides/backup-power.html">Backup power guide</a></li>
+<li><a href="/power/">All Power tools &amp; guides</a></li></ul></div>
+<div><b>Water</b><ul>
+<li><a href="https://well-pressure-tank-sizer.vercel.app/">Well Pressure Tank Sizer</a></li>
+<li><a href="/guides/well-water.html">Well water guide</a></li>
+<li><a href="/water/">All Water tools &amp; guides</a></li></ul></div>
+<div><b>Heat &amp; Air</b><ul>
+<li><a href="https://space-heater-planner.vercel.app/">Space Heater Planner</a></li>
+<li><a href="/tools/snowblower-size-picker.html">Snowblower Size Picker</a></li>
+<li><a href="/heat-air/furnace-outage-runtime/">Furnace Outage Runtime</a></li>
+<li><a href="/guides/heat-without-the-grid.html">Heat without the grid</a></li>
+<li><a href="/heat-air/">All Heat &amp; Air</a></li></ul></div>
+<div><b>Safety</b><ul>
+<li><a href="/safety/smoke-co-alarm-planner/">Smoke &amp; CO Alarm Planner</a></li>
+<li><a href="/guides/winter-prep.html">Winter prep checklist</a></li>
+<li><a href="/safety/">All Safety tools &amp; guides</a></li>
+<li><a href="/about.html">About &amp; disclosure</a></li></ul></div>
+</div>
+<div class="wrap legal">As an Amazon Associate I earn from qualifying purchases (tag wellpumpplann-20). Brand names mentioned without an Amazon link are not affiliate links. © 2026 Live City Life, Anywhere.</div>
+</footer>
+<script src="/assets/hub.js" defer></script>
+<script>
+(function(){'use strict';
+var TAG='wellpumpplann-20';
+var BLOWER={psc:{w:550,s:2.5},ecm:{w:420,s:1.4},big:{w:875,s:2.7},custom:{w:null,s:2.5}};
+var EXTRA={fridge:{avg:50,run:150,surge:1200},sump:{avg:130,run:800,surge:1300},cpap:{avg:56,run:56,surge:60},net:{avg:30,run:30,surge:30}};
+var st={blower:'psc',duty:0.5,wh:2048,extra:{},target:8};
+function $(i){return document.getElementById(i)}
+function f(n){return Math.round(n).toLocaleString('en-US')}
+function sizeClass(wh){var c=[1024,2048,3840,5120,7680,10240,15360];for(var i=0;i<c.length;i++)if(c[i]>=wh)return c[i];return null}
+function amz(q,txt,cls){return '<a class="'+(cls||'')+'" rel="sponsored nofollow noopener" target="_blank" data-out="amazon" href="https://www.amazon.com/s?k='+encodeURIComponent(q)+'&tag='+TAG+'">'+txt+' <span style="font-weight:500">(Amazon)</span></a>'}
+function calc(){
+ var b=BLOWER[st.blower],fw=st.blower==='custom'?(parseFloat($('i-blower').value)||0):b.w;
+ var wh=st.wh==='custom'?(parseFloat($('i-wh').value)||0):st.wh;
+ var avg=fw*st.duty,run=fw,surge=fw*b.s,ex=0,maxExSurge=0;
+ for(var k in st.extra){if(!st.extra[k])continue;var e=EXTRA[k];avg+=e.avg;ex+=e.run;maxExSurge=Math.max(maxExSurge,e.surge-e.run)}
+ var cont=run+ex,surgeNeed=Math.max(surge+ex,cont+maxExSurge);
+ if(!(fw>0&&wh>0)){$('o-hours').textContent='—';return}
+ var hrs=wh*0.85/avg,need=st.target*avg/0.85;
+ $('o-hours').innerHTML=(hrs>=10?f(hrs):hrs.toFixed(1))+' <small>hours of heat</small>';
+ $('o-avg').textContent=f(avg)+' W';$('o-need').textContent=f(need)+' Wh';
+ $('o-cont').textContent=f(Math.ceil(cont*1.25/100)*100)+' W+';
+ $('o-surge').textContent=f(Math.ceil(surgeNeed/100)*100)+' W+';
+ var v=$('o-verdict');
+ if(hrs>=st.target){v.className='verdict ok';v.textContent='Covers your '+st.target+' h target with '+(hrs-st.target).toFixed(1)+' h to spare.'}
+ else if(hrs>=st.target*0.6){v.className='verdict warn';v.textContent='Short by '+(st.target-hrs).toFixed(1)+' h. Add an expansion battery, solar, or turn the thermostat down.'}
+ else{v.className='verdict bad';v.textContent='Not enough. You need about '+f(need)+' Wh for '+st.target+' h, or a recharge plan.'}
+ var cls=sizeClass(need),shop='';
+ if(cls)shop+=amz((cls>=5000?'home backup power station expandable '+Math.round(cls/1000)+'kWh LiFePO4':'portable power station '+cls+'Wh LiFePO4'),'Shop '+(cls/1000).toFixed(1).replace(/\.0$/,'')+' kWh+ power stations');
+ else shop+=amz('whole home battery backup power station expansion battery','Shop whole-home battery systems');
+ shop+=amz('furnace generator transfer switch','Furnace transfer switch','alt');
+ shop+=amz('solar panel for power station 200W','Solar panels to recharge','alt');
+ $('o-shop').innerHTML=shop;
+}
+function bind(id,key){var g=$(id),multi=g.getAttribute('data-multi');
+ g.addEventListener('click',function(e){var btn=e.target.closest('button');if(!btn)return;var v=btn.getAttribute('data-v');
+  if(multi){st.extra[v]=!st.extra[v];btn.setAttribute('aria-pressed',st.extra[v]?'true':'false')}
+  else{[].forEach.call(g.querySelectorAll('button'),function(x){x.setAttribute('aria-pressed',x===btn?'true':'false')});
+   st[key]=(v==='custom'||isNaN(+v))?v:+v;var c=$('c-'+key);if(c)c.classList.toggle('on',v==='custom')}
+  calc()});
+ [].forEach.call(g.querySelectorAll('button'),function(x){if(!multi)x.setAttribute('aria-pressed',String(x.getAttribute('data-v'))===String(st[key])?'true':'false');else x.setAttribute('aria-pressed','false')})}
+bind('g-blower','blower');bind('g-duty','duty');bind('g-wh','wh');bind('g-extra','extra');bind('g-target','target');
+$('i-blower').addEventListener('input',calc);$('i-wh').addEventListener('input',calc);
+document.addEventListener('click',function(e){var a=e.target.closest('a[data-out]');if(!a)return;try{var n=+(localStorage.getItem('bank-out-clicks')||0)+1;localStorage.setItem('bank-out-clicks',n)}catch(_){};if(window.va)window.va('event',{name:'outbound',data:{dest:a.getAttribute('data-out'),page:'furnace-outage-runtime'}})});
+calc();
+})();
+</script>
+</body>
+</html>
