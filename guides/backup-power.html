@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Backup Power for a Home on a Well: Generator vs Power Station, Surge, 240 V</title>
+<meta name="description" content="How to size backup power around your well pump: start-up surge (often 2–3× running), 240 V pumps, the 80% rule, staggered starts, safe hookups and battery runtime.">
+<link rel="canonical" href="https://live-city-life-anywhere.vercel.app/guides/backup-power.html">
+<meta property="og:title" content="Backup Power for a Home on a Well: Generator vs Power Station, Surge, 240 V">
+<meta property="og:description" content="How to size backup power around your well pump: start-up surge (often 2–3× running), 240 V pumps, the 80% rule, staggered starts, safe hookups and battery runtime.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://live-city-life-anywhere.vercel.app/guides/backup-power.html">
+<meta name="theme-color" content="#2c4bb5">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="wrap bar">
+<a class="brand" href="../index.html"><span class="sunmark" aria-hidden="true"></span><span>Live City Life, <em>Anywhere</em></span></a>
+<nav class="nav" aria-label="Main"><a href="../index.html">Hub</a><a href="../guides/index.html" aria-current="page">Guides</a><a href="../tools/index.html">Tools</a><a href="../about.html">About</a></nav>
+</div></header>
+<div class="disclose"><div class="wrap"><p><strong>Disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. Amazon links are marked; we never show prices or ratings because they change. <a href="../about.html#disclosure">More</a></p></div></div>
+<main id="main">
+<div class="pagehead"><div class="wrap">
+<p class="crumbs"><a href="../index.html">Hub</a> › <a href="../guides/index.html">Guides</a> › Backup power</p>
+<p class="kicker">Guide 01 · Lights, fridge, water</p>
+<h1>Backup power for a home on a well</h1>
+<p class="lede">On city power you never think about the pump. On a well, no power means no water. This guide shows how to size backup power around the one number that decides it: the pump’s start-up surge.</p><p class="meta">Reading time about 10 minutes · Pairs with the <a href="https://wellpump-generator-planner.vercel.app/">Well Pump Generator Planner</a></p>
+</div></div>
+<div class="wrap layout">
+<nav class="toc" aria-label="On this page"><b>On this page</b><ol>
+<li><a href="#surge">The number that decides it</a></li>
+<li><a href="#choose">Generator or power station?</a></li>
+<li><a href="#nameplate">Read the nameplate</a></li>
+<li><a href="#math">The sizing math</a></li>
+<li><a href="#stagger">Stagger your starts</a></li>
+<li><a href="#hookup">Connecting safely</a></li>
+<li><a href="#battery">Battery runtime</a></li>
+<li><a href="#checklist">Before you buy</a></li>
+</ol></nav>
+<article class="prose">
+<h2 id="surge">1. The number that decides it: start-up surge</h2>
+<p>An electric motor pulls far more power for the first second or so than it does while running. A refrigerator compressor, a furnace blower and above all a submersible well pump all do this. Your generator or inverter has to cover that spike <em>on top of</em> everything already running, or it stalls, trips, or the pump hums without starting.</p>
+<div class="rule"><b>Rule of thumb</b><p>A well pump’s starting draw is often <strong>2–3× its running draw</strong> <span class="est">estimate</span>. Your nameplate wins over any chart, including ours.</p></div>
+<p>The second thing that surprises people: <strong>most submersible well pumps run on 240 V</strong>. Many small generators and most portable power stations only provide 120 V. If the pump is on a two-pole breaker (two handles tied together), it is a 240 V load.</p>
+
+<h2 id="choose">2. Generator or portable power station?</h2>
+<p>They solve different problems. Many off-grid and rural homes end up with both: a battery for quiet, indoor-safe essentials and a generator for the pump and multi-day outages.</p>
+<div class="tablewrap"><table class="stack">
+<thead><tr><th>Need</th><th>Fuel generator</th><th>Portable power station (battery)</th></tr></thead>
+<tbody>
+<tr><td data-h="Need">240 V well pump</td><td data-h="Fuel generator">Yes, if it has a 240 V outlet and enough surge watts. Needs a transfer switch or interlock.</td><td data-h="Power station">Only if the spec sheet lists 240 V output <em>and</em> enough surge. Most units are 120 V only; some reach 240 V by linking two units or with an accessory hub.</td></tr>
+<tr><td data-h="Need">Fridge, freezer, lights, Wi-Fi, chargers</td><td data-h="Fuel generator">Yes, but you run an engine to power small loads.</td><td data-h="Power station">A good fit: silent, no fumes, can sit indoors.</td></tr>
+<tr><td data-h="Need">Medical devices (CPAP, oxygen concentrator)</td><td data-h="Fuel generator">Works, but someone must keep it fuelled and running outside.</td><td data-h="Power station">Usually preferred for overnight use. Check the device’s watts and the station’s continuous rating.</td></tr>
+<tr><td data-h="Need">Outage longer than a day or two</td><td data-h="Fuel generator">Lasts as long as your stored fuel.</td><td data-h="Power station">Lasts as long as the battery, unless you can recharge (solar panels, a generator, or a vehicle).</td></tr>
+<tr><td data-h="Need">Where it can run</td><td data-h="Fuel generator"><strong>Outdoors only.</strong> Never in a garage, basement, shed doorway or near windows.</td><td data-h="Power station">Indoors is fine. Keep vents clear.</td></tr>
+</tbody></table></div>
+<div class="danger"><b>Carbon monoxide kills quietly</b><p>Run a fuel generator outside only. The U.S. Consumer Product Safety Commission advises at least <strong>20 feet from the house</strong> with the exhaust pointed away from doors, windows and vents. Put battery-powered or battery-backup CO alarms on every level and outside sleeping areas.</p></div>
+<p>Brand note: battery brands like EcoFlow publish both continuous and surge (“peak”) watts. Compare both against your numbers. We are not paid for brand mentions.</p>
+
+<h2 id="nameplate">3. Read the nameplate, not the internet</h2>
+<p>Every number you need is printed somewhere in your house. Write these down before you shop:</p>
+<ol class="steps">
+<li><strong>Well pump.</strong> A submersible pump’s own label is down the well, so look at the <em>control box</em> (3-wire pumps have one, usually near the pressure tank), your well installer’s paperwork, or the pump breaker. Note volts, horsepower, and amps. “230 V” on a plate means a 240 V circuit.</li>
+<li><strong>Refrigerator and freezer.</strong> The label inside the door or on the back lists volts and amps.</li>
+<li><strong>Furnace or boiler.</strong> The blower or burner needs electricity even when the fuel is gas, propane or oil. The furnace label lists volts and amps.</li>
+<li><strong>Look for LRA.</strong> Some motor plates list LRA (locked-rotor amps). Volts × LRA is a conservative upper bound for the start-up spike. Soft-start or variable-speed (constant-pressure) controllers cut the surge a lot.</li>
+</ol>
+<form class="calc" data-calc="nameplate" id="np">
+<h3>Quick check: nameplate to watts</h3>
+<div class="fields">
+<div><label for="np-v">Volts on the plate</label><select id="np-v" name="v"><option value="120">115–120 V</option><option value="240" selected>230–240 V</option></select></div>
+<div><label for="np-a">Running amps (FLA / "A")</label><input id="np-a" name="a" type="number" inputmode="decimal" min="0" step="0.1" placeholder="e.g. 8.0"></div>
+<div><label for="np-l">LRA, if listed (optional)</label><input id="np-l" name="lra" type="number" inputmode="decimal" min="0" step="0.1" placeholder="optional"></div>
+</div>
+<p class="nojs">Without JavaScript: running watts ≈ volts × amps. A motor's starting watts are often 2–3× running (estimate).</p>
+<div class="result" aria-live="polite"></div>
+</form>
+<h2 id="math">4. The sizing math the planner uses</h2>
+<p>The <a href="https://wellpump-generator-planner.vercel.app/">Well Pump Generator Planner</a> does this for you. Here is exactly what it calculates, so you can check any quote or listing:</p>
+<div class="math">Running total   = sum of running watts for everything on at once
+Staggered peak  = running total + the single largest surge (starting − running watts)
+Look for        running rating ≥ running total ÷ 0.8
+                surge/starting rating ≥ staggered peak</div>
+<div class="rule"><b>Why divide by 0.8?</b><p>A generator that runs for hours near 100% runs hot and has no headroom. Keeping continuous load at or under about <strong>80% of the running rating</strong> is a standard planning margin.</p></div>
+<h3>Worked example (the planner’s default loads)</h3>
+<p>The planner starts with a ½ HP well pump, refrigerator, gas furnace blower, ten LED lights and Wi-Fi. These are its typical planning figures <span class="est">estimates</span>; replace them with your nameplate numbers.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Load</th><th>Running W</th><th>Starting W</th></tr></thead>
+<tbody>
+<tr><td>Well pump, ½ HP</td><td class="num">1,000</td><td class="num">2,100</td></tr>
+<tr><td>Refrigerator</td><td class="num">700</td><td class="num">2,200</td></tr>
+<tr><td>Gas furnace blower</td><td class="num">800</td><td class="num">2,350</td></tr>
+<tr><td>Lights (10 LED)</td><td class="num">100</td><td class="num">100</td></tr>
+<tr><td>Wi-Fi + modem</td><td class="num">25</td><td class="num">25</td></tr>
+</tbody></table></div>
+<div class="math">Running total            = 2,625 W
+Largest single surge     = furnace blower, 2,350 − 800 = 1,550 W
+Staggered peak           = 2,625 + 1,550 = 4,175 W
+Everything starts at once = 6,775 W
+Look for: ≈ 3,300 W running (2,625 ÷ 0.8, rounded up) and ≈ 4,200 W starting</div>
+<p>Notice the gap: starting everything at once needs about 6,800 W of surge, while starting one motor at a time needs about 4,200 W. That is the difference between a large generator and a mid-size one.</p>
+
+<h2 id="stagger">5. Stagger your starts</h2>
+<p>Motor surges last about a second. If they never overlap, a smaller generator can carry the same house. Tape this order inside your panel door:</p>
+<ol class="steps">
+<li>Before connecting: switch the big loads off (pump breaker, furnace switch, fridge unplugged or its breaker off).</li>
+<li>Start the generator outdoors and let it settle for a minute.</li>
+<li>Turn on the load with the <strong>biggest surge first</strong>. Wait about 10 seconds.</li>
+<li>Turn on the next biggest. Wait. Repeat for each motor.</li>
+<li>Small loads (lights, Wi-Fi, chargers) last.</li>
+</ol>
+<p>The planner prints this start order for your exact loads.</p>
+
+<h2 id="hookup">6. Connecting to the house safely</h2>
+<div class="danger"><b>Never backfeed through a dryer outlet</b><p>A “double male” cord plugged into a dryer or range outlet can send generator power back out onto the utility lines, where it can kill a lineworker, and it leaves live, exposed prongs on the cord. It also bypasses your panel’s protection. Don’t do it, even briefly.</p></div>
+<ul>
+<li><strong>A 240 V well pump needs a proper connection:</strong> a transfer switch or a panel interlock kit with a generator inlet. Choose and install it with a <strong>licensed electrician</strong> so it matches your panel. Permits are required in many areas.</li>
+<li>Match the cord to the generator outlet and inlet (many 240 V setups use a 30 A, 4-prong twist-lock cord). Don’t use a lighter cord than the outlet is rated for.</li>
+<li>Refuel only with the engine off and cool. Store fuel in approved containers away from the house.</li>
+<li>Run the generator under load periodically so you find problems before the outage. Monthly is a common habit.</li>
+</ul>
+
+<h2 id="battery">7. How long will a battery last?</h2>
+<p>Battery stations are rated in watt-hours (Wh). A rough runtime estimate:</p>
+<div class="math">hours ≈ capacity (Wh) × 0.85 ÷ average load (W)      (0.85 = inverter losses, an estimate)</div>
+<p>Example arithmetic: a 1,000 Wh station feeding a steady 150 W load gives about 1,000 × 0.85 ÷ 150 ≈ 5.7 hours. A fridge cycles on and off, so its <em>average</em> draw is far below its running watts. Measure it with a plug-in watt meter over 24 hours instead of guessing.</p>
+<form class="calc" data-calc="runtime" id="rt">
+<h3>Quick check: power station runtime</h3>
+<div class="fields">
+<div><label for="rt-wh">Battery capacity (Wh)</label><input id="rt-wh" name="wh" type="number" inputmode="numeric" min="0" step="10" placeholder="e.g. 1000"></div>
+<div><label for="rt-w">Average load (W)</label><input id="rt-w" name="w" type="number" inputmode="numeric" min="0" step="5" placeholder="e.g. 150"></div>
+<div><label for="rt-e">Usable % <span class="est">estimate</span></label><input id="rt-e" name="eff" type="number" inputmode="numeric" min="50" max="100" step="1" value="85"></div>
+<div><label for="rt-c">Continuous rating (W, optional)</label><input id="rt-c" name="cont" type="number" inputmode="numeric" min="0" step="50" placeholder="optional"></div>
+</div>
+<p class="nojs">Without JavaScript: hours ≈ Wh × 0.85 ÷ average watts. The 85% allows for inverter losses and is an estimate.</p>
+<div class="result" aria-live="polite"></div>
+</form>
+<h2 id="checklist">8. Before you buy anything</h2>
+<ul class="checklist" data-key="power-buy"><li><label><input type="checkbox"><span>I wrote down volts, amps and HP for the well pump (control box, paperwork or breaker).</span></label></li><li><label><input type="checkbox"><span>I know whether my pump is 120 V or 240 V (two-pole breaker = 240 V).</span></label></li><li><label><input type="checkbox"><span>I listed fridge, freezer, furnace or boiler, and any medical devices with their nameplate amps.</span></label></li><li><label><input type="checkbox"><span>I ran my list through the <a href="https://wellpump-generator-planner.vercel.app/">planner</a> and have a running and a starting target.</span></label></li><li><label><input type="checkbox"><span>The generator I’m considering has a 240 V outlet if my pump needs one, and its <em>starting</em> rating covers my staggered peak.</span></label></li><li><label><input type="checkbox"><span>I have a plan (and an electrician) for a transfer switch or interlock. No dryer-outlet cords.</span></label></li><li><label><input type="checkbox"><span>I have CO alarms with batteries on every level.</span></label></li><li><label><input type="checkbox"><span>I have a fuel storage plan, or a recharge plan for a battery.</span></label></li></ul>
+<h3>Useful gear</h3>
+<ul class="gear">
+<li><a href="https://www.amazon.com/s?k=plug+in+watt+meter+electricity+usage+monitor&amp;tag=wellpumpplann-20" rel="sponsored nofollow noopener" target="_blank">Plug-in watt meter</a> <span class="aff">(Amazon search · affiliate)</span> to measure fridge and freezer average draw.</li>
+<li><a href="https://www.amazon.com/s?k=battery+carbon+monoxide+detector&amp;tag=wellpumpplann-20" rel="sponsored nofollow noopener" target="_blank">Battery-powered CO alarm</a> <span class="aff">(Amazon search · affiliate)</span></li>
+<li><a href="https://www.amazon.com/s?k=30+amp+generator+power+cord+250v&amp;tag=wellpumpplann-20" rel="sponsored nofollow noopener" target="_blank">30 A, 240 V generator cord</a> <span class="aff">(Amazon search · affiliate)</span> (match your generator outlet and inlet).</li>
+</ul>
+<div class="band"><h2>Size it for your house</h2><p>Add your own loads, see running and starting watts, and get a start order you can tape to the panel.</p><p><a class="btn" href="https://wellpump-generator-planner.vercel.app/">Open the Well Pump Generator Planner →</a></p><p class="small">Next guide: <a href="../guides/well-water.html">Steady well water</a>, because the pump you just powered should not short-cycle.</p></div>
+</article></div>
+</main>
+<footer class="foot">
+<div class="wrap grid">
+<div><b>Live City Life, Anywhere</b>
+<p>Guides and free planners for keeping water, lights, heat and a cold fridge when you live off the municipal grid or ride out outages.</p>
+<p><strong>Planning information only.</strong> This is not professional electrical, plumbing or well-system advice. Check nameplates and manufacturer charts, and use a licensed electrician or well contractor for anything wired or plumbed into your home.</p></div>
+<div><b>Guides</b><ul>
+<li><a href="../guides/backup-power.html">Backup power for a well home</a></li>
+<li><a href="../guides/well-water.html">Steady well water</a></li>
+<li><a href="../guides/heat-without-the-grid.html">Heat without the grid</a></li>
+<li><a href="../guides/winter-prep.html">Winter prep checklist</a></li></ul></div>
+<div><b>Free tools</b><ul>
+<li><a href="https://wellpump-generator-planner.vercel.app/">Well Pump Generator Planner</a></li>
+<li><a href="https://well-pressure-tank-sizer.vercel.app/">Well Pressure Tank Sizer</a></li>
+<li><a href="https://space-heater-planner.vercel.app/">Space Heater Planner</a></li>
+<li><a href="../tools/snowblower-size-picker.html">Snowblower Size Picker</a></li>
+<li><a href="../about.html">About &amp; disclosure</a></li></ul></div>
+</div>
+<div class="wrap legal">As an Amazon Associate I earn from qualifying purchases (tag wellpumpplann-20). Brand names mentioned without an Amazon link are not affiliate links. © 2026 Live City Life, Anywhere.</div>
+</footer>
+<script src="../assets/hub.js" defer></script>
+</body>
+</html>
