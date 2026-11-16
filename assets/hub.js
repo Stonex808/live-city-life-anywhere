@@ -37,7 +37,7 @@
       if(!(w>0&&c>0))return out(f,'Enter the driveway width in feet.');
       var cut=c/12*0.85,p=Math.ceil(w/cut-1e-9),h='About <b>'+fmt(p)+' passes</b> ('+fmt(w)+' ft ÷ '+fmt(cut,2)+' ft cut with ~15% overlap). <span class="est">estimate</span>';
       if(l>0){var d=p*l,m=d/176+Math.max(p-1,0)*10/60;h+='<br>About <b>'+fmt(d)+' ft</b> of walking, roughly <b>'+fmt(Math.max(m,1))+' min</b> at ~2 mph plus turns. Deep or wet snow is slower.'}
-      h+='<br>Class, width and a width-by-width comparison: <a href="snowblower-size-picker.html">Snowblower Size Picker</a>.';
+      h+='<br>Class, width and a width-by-width comparison: <a href="/tools/snowblower-size-picker.html">Snowblower Size Picker</a>.';
       out(f,h);
     },
     circuit:function(f){
