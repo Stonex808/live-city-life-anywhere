@@ -147,6 +147,8 @@ tr:last-child td{border-bottom:0}
 .foot{background:#141b25;color:#c9d2df;margin-top:40px;font-size:.92rem}
 .foot .grid{display:grid;gap:18px;padding-top:28px;padding-bottom:14px}
 @media(min-width:760px){.foot .grid{grid-template-columns:1.2fr 1fr 1fr}}
+@media(min-width:700px){.foot .grid.buckets-foot{grid-template-columns:1.3fr 1fr 1fr}}
+@media(min-width:1100px){.foot .grid.buckets-foot{grid-template-columns:1.4fr repeat(4,.9fr)}}
 .foot b{color:#fff;font-family:var(--display);font-size:1.02rem}
 .foot a{color:#ffd88a}
 .foot ul{list-style:none;padding:0;margin:.4em 0}
@@ -154,3 +156,23 @@ tr:last-child td{border-bottom:0}
 .foot .legal{border-top:1px solid #2a3443;padding-top:12px;padding-bottom:26px;color:#93a0b3;font-size:.84rem}
 @media print{.top,.disclose,.foot,.toc,.noprint,.btns{display:none!important}body{background:#fff;font-size:12pt}.card,.calc{box-shadow:none}.checklist input{width:14px;height:14px}}
 @media(max-width:879px){.hero::before{width:170px;height:170px;right:-70px;top:-60px;opacity:.75}}
+
+/* bucket cards */
+.buckets{display:grid;gap:16px;margin:8px 0 22px}
+@media(min-width:760px){.buckets{grid-template-columns:1fr 1fr}}
+a.bucket,article.bucket{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--stone);border-radius:var(--r);padding:20px 20px 18px;border-top:6px solid var(--horizon);text-decoration:none;color:var(--ink);min-width:0}
+a.bucket:hover{border-color:var(--horizon);box-shadow:0 8px 24px -18px rgba(30,53,127,.6);color:var(--ink)}
+.buckets a.bucket:nth-child(2),article.bucket.water{border-top-color:var(--dusk)}
+.buckets a.bucket:nth-child(3),article.bucket.heat{border-top-color:var(--sun)}
+.buckets a.bucket:nth-child(4),article.bucket.safety{border-top-color:var(--bad)}
+.bucket .name{display:inline-block;font-size:.74rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.bucket .problem{font-family:var(--display);font-size:clamp(1.55rem,3.4vw,2.1rem);line-height:1.15;margin:.15em 0 .4em}
+.bucket p{margin:.2em 0 .7em}
+.bucket ul{padding-left:1.1rem;margin:.2em 0 .9em}
+.bucket .go{margin-top:auto}
+@media(max-width:480px){.nav a{padding:9px 10px;font-size:.9rem}}
+.subtabs{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 8px}
+.subtabs a{display:inline-flex;align-items:center;min-height:40px;padding:6px 12px;border-radius:999px;background:var(--stone-2);color:var(--ink);text-decoration:none;font-weight:600;font-size:.92rem}
+.subtabs a:hover{background:var(--sky-2);color:var(--horizon-deep)}
+
+@media(min-width:1100px){.rail.rail-2{grid-template-columns:repeat(2,1fr)}}
