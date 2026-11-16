@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Well Pump Generator Planner: how it sizes a generator for a well pump</title>
+<meta name="description" content="How the free Well Pump Generator Planner works: inputs to gather, the running, surge and 80% math, a worked example, and its limits.">
+<link rel="canonical" href="https://live-city-life-anywhere.vercel.app/tools/well-pump-generator-planner.html">
+<meta property="og:title" content="Well Pump Generator Planner: how it sizes a generator for a well pump">
+<meta property="og:description" content="How the free Well Pump Generator Planner works: inputs to gather, the running, surge and 80% math, a worked example, and its limits.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://live-city-life-anywhere.vercel.app/tools/well-pump-generator-planner.html">
+<meta name="theme-color" content="#2c4bb5">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="wrap bar">
+<a class="brand" href="../index.html"><span class="sunmark" aria-hidden="true"></span><span>Live City Life, <em>Anywhere</em></span></a>
+<nav class="nav" aria-label="Main"><a href="../index.html">Hub</a><a href="../guides/index.html">Guides</a><a href="../tools/index.html" aria-current="page">Tools</a><a href="../about.html">About</a></nav>
+</div></header>
+<div class="disclose"><div class="wrap"><p><strong>Disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. Amazon links are marked; we never show prices or ratings because they change. <a href="../about.html#disclosure">More</a></p></div></div>
+<main id="main">
+<div class="pagehead"><div class="wrap">
+<p class="crumbs"><a href="../index.html">Hub</a> › <a href="../tools/index.html">Tools</a> › Well Pump Generator Planner</p>
+<p class="kicker">Tool · Backup power</p>
+<h1>Well Pump Generator Planner</h1>
+<p class="lede">Size a generator around the load that decides it on a well: the pump’s start-up surge. Tick what you need during an outage, edit the watts to match your nameplates, and get a rating to shop for plus a start order.</p>
+</div></div>
+<div class="wrap section">
+<p class="btns"><a class="btn" href="https://wellpump-generator-planner.vercel.app/">Open the Well Pump Generator Planner →</a><a class="btn ghost" href="../guides/backup-power.html">Read the backup power guide</a></p>
+<p class="small">Free, no sign-up, runs in your browser at <a href="https://wellpump-generator-planner.vercel.app/">wellpump-generator-planner.vercel.app</a>.</p>
+<div class="two">
+<div class="card"><h2 style="margin-top:0">It answers</h2><p>“What size generator do I need to run my well pump, furnace and fridge at the same time?” and “In what order should I turn things on so a smaller generator copes?”</p></div>
+<div class="card"><h2 style="margin-top:0">You get</h2><ul><li>Running total of everything checked</li><li>Peak if you stagger starts vs. peak if everything starts at once</li><li>A running rating (÷0.8) and a starting rating to look for</li><li>A 240 V warning when a well pump is selected</li><li>A start order, biggest surge first, ~10 s apart</li><li>Amazon search links matched to your wattage band (affiliate, marked)</li></ul></div>
+</div>
+<h2>What to have ready (and where to find it)</h2>
+<div class="tablewrap"><table class="stack"><thead><tr><th>Input</th><th>Where to find it</th></tr></thead><tbody><tr><td data-h="Input"><strong>Well pump volts, HP and amps</strong></td><td data-h="Where to find it">Pump control box near the pressure tank (3-wire pumps), installer paperwork, or the pump breaker (two-pole = 240 V).</td></tr><tr><td data-h="Input"><strong>Fridge and freezer amps</strong></td><td data-h="Where to find it">Label inside the door or on the back.</td></tr><tr><td data-h="Input"><strong>Furnace or boiler amps</strong></td><td data-h="Where to find it">Furnace or boiler data plate. Gas, propane and oil heat still need power for the blower or burner.</td></tr><tr><td data-h="Input"><strong>Anything else you must run</strong></td><td data-h="Where to find it">Sump pump, lights, Wi-Fi, chargers, medical devices: labels or a plug-in watt meter.</td></tr><tr><td data-h="Input"><strong>Soft start or constant-pressure drive?</strong></td><td data-h="Where to find it">Controller label or installer paperwork. If yes, set starting watts close to running watts.</td></tr></tbody></table></div>
+<h2>How the math works</h2>
+<div class="math">running total   = Σ running W of checked loads
+largest surge   = max(starting W − running W)
+staggered peak  = running total + largest surge
+worst case      = Σ starting W
+recommended     = running ≥ running total ÷ 0.8 (rounded up to 100 W)
+                  starting ≥ staggered peak (rounded up to 100 W)</div>
+<h2>Worked example</h2>
+<p>With the planner’s default loads (½ HP pump 1,000/2,100 W, fridge 700/2,200 W, gas furnace blower 800/2,350 W, 10 LED lights 100 W, Wi-Fi 25 W; all planning figures <span class="est">estimate</span>):</p><div class="math">running total 2,625 W · staggered peak 4,175 W · all-at-once 6,775 W
+→ look for ≈ 3,300 W running and ≈ 4,200 W starting</div>
+<form class="calc" data-calc="nameplate" id="tp1-np">
+<h3>Quick check: nameplate to watts</h3>
+<div class="fields">
+<div><label for="tp1-np-v">Volts on the plate</label><select id="tp1-np-v" name="v"><option value="120">115–120 V</option><option value="240" selected>230–240 V</option></select></div>
+<div><label for="tp1-np-a">Running amps (FLA / "A")</label><input id="tp1-np-a" name="a" type="number" inputmode="decimal" min="0" step="0.1" placeholder="e.g. 8.0"></div>
+<div><label for="tp1-np-l">LRA, if listed (optional)</label><input id="tp1-np-l" name="lra" type="number" inputmode="decimal" min="0" step="0.1" placeholder="optional"></div>
+</div>
+<p class="nojs">Without JavaScript: running watts ≈ volts × amps. A motor's starting watts are often 2–3× running (estimate).</p>
+<div class="result" aria-live="polite"></div>
+</form>
+<h2>Limits to know</h2><ul><li>Default watts are typical planning figures, not your equipment. Replace them with nameplate numbers.</li><li>A well pump’s starting draw is often 2–3× running; motors with a soft start surge much less.</li><li>The planner doesn’t design the house connection. A transfer switch or interlock must be chosen and installed by a licensed electrician. Never backfeed through a dryer outlet.</li></ul>
+<div class="band"><h2>Run your own numbers</h2><p>The full tool handles your exact loads and settings, with explanations next to every result.</p><p><a class="btn" href="https://wellpump-generator-planner.vercel.app/">Open the Well Pump Generator Planner →</a></p></div>
+</div>
+</main>
+<footer class="foot">
+<div class="wrap grid">
+<div><b>Live City Life, Anywhere</b>
+<p>Guides and free planners for keeping water, lights, heat and a cold fridge when you live off the municipal grid or ride out outages.</p>
+<p><strong>Planning information only.</strong> This is not professional electrical, plumbing or well-system advice. Check nameplates and manufacturer charts, and use a licensed electrician or well contractor for anything wired or plumbed into your home.</p></div>
+<div><b>Guides</b><ul>
+<li><a href="../guides/backup-power.html">Backup power for a well home</a></li>
+<li><a href="../guides/well-water.html">Steady well water</a></li>
+<li><a href="../guides/heat-without-the-grid.html">Heat without the grid</a></li>
+<li><a href="../guides/winter-prep.html">Winter prep checklist</a></li></ul></div>
+<div><b>Free tools</b><ul>
+<li><a href="https://wellpump-generator-planner.vercel.app/">Well Pump Generator Planner</a></li>
+<li><a href="https://well-pressure-tank-sizer.vercel.app/">Well Pressure Tank Sizer</a></li>
+<li><a href="https://space-heater-planner.vercel.app/">Space Heater Planner</a></li>
+<li><a href="../tools/snowblower-size-picker.html">Snowblower Size Picker</a></li>
+<li><a href="../about.html">About &amp; disclosure</a></li></ul></div>
+</div>
+<div class="wrap legal">As an Amazon Associate I earn from qualifying purchases (tag wellpumpplann-20). Brand names mentioned without an Amazon link are not affiliate links. © 2026 Live City Life, Anywhere.</div>
+</footer>
+<script src="../assets/hub.js" defer></script>
+</body>
+</html>

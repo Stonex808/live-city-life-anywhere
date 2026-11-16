@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Well Pressure Tank Sizer: how it picks a tank and precharge</title>
+<meta name="description" content="How the free Well Pressure Tank Sizer works: GPM × run time drawdown, Amtrol published drawdowns, precharge at cut-in minus 2 psi, worked example and limits.">
+<link rel="canonical" href="https://live-city-life-anywhere.vercel.app/tools/well-pressure-tank-sizer.html">
+<meta property="og:title" content="Well Pressure Tank Sizer: how it picks a tank and precharge">
+<meta property="og:description" content="How the free Well Pressure Tank Sizer works: GPM × run time drawdown, Amtrol published drawdowns, precharge at cut-in minus 2 psi, worked example and limits.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://live-city-life-anywhere.vercel.app/tools/well-pressure-tank-sizer.html">
+<meta name="theme-color" content="#2c4bb5">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="wrap bar">
+<a class="brand" href="../index.html"><span class="sunmark" aria-hidden="true"></span><span>Live City Life, <em>Anywhere</em></span></a>
+<nav class="nav" aria-label="Main"><a href="../index.html">Hub</a><a href="../guides/index.html">Guides</a><a href="../tools/index.html" aria-current="page">Tools</a><a href="../about.html">About</a></nav>
+</div></header>
+<div class="disclose"><div class="wrap"><p><strong>Disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. Amazon links are marked; we never show prices or ratings because they change. <a href="../about.html#disclosure">More</a></p></div></div>
+<main id="main">
+<div class="pagehead"><div class="wrap">
+<p class="crumbs"><a href="../index.html">Hub</a> › <a href="../tools/index.html">Tools</a> › Well Pressure Tank Sizer</p>
+<p class="kicker">Tool · Well water</p>
+<h1>Well Pressure Tank Sizer</h1>
+<p class="lede">Pick a bladder pressure tank whose published drawdown covers at least a minute of your pump’s flow, so the pump stops short-cycling. Also tells you the precharge and flags an undersized existing tank.</p>
+</div></div>
+<div class="wrap section">
+<p class="btns"><a class="btn" href="https://well-pressure-tank-sizer.vercel.app/">Open the Well Pressure Tank Sizer →</a><a class="btn ghost" href="../guides/well-water.html">Read the well water guide</a></p>
+<p class="small">Free, no sign-up, runs in your browser at <a href="https://well-pressure-tank-sizer.vercel.app/">well-pressure-tank-sizer.vercel.app</a>.</p>
+<div class="two">
+<div class="card"><h2 style="margin-top:0">It answers</h2><p>“What size pressure tank do I need for my pump and switch setting?” and “Is my current tank too small?”</p></div>
+<div class="card"><h2 style="margin-top:0">You get</h2><ul><li>Required drawdown in gallons</li><li>The smallest tank on the Amtrol Well-X-Trol reference table that meets it, with model</li><li>Precharge setting (cut-in − 2 psi)</li><li>A warning if your current tank looks undersized</li><li>The full drawdown reference table with your pick highlighted</li></ul></div>
+</div>
+<h2>What to have ready (and where to find it)</h2>
+<div class="tablewrap"><table class="stack"><thead><tr><th>Input</th><th>Where to find it</th></tr></thead><tbody><tr><td data-h="Input"><strong>Pump flow (GPM)</strong></td><td data-h="Where to find it">Well driller’s log, installer invoice, or the pump model’s spec sheet. Nameplate GPM wins over guesses.</td></tr><tr><td data-h="Input"><strong>Minimum run time</strong></td><td data-h="Where to find it">1 minute is the common target; 2 minutes is safer on larger pumps. Use the pump maker’s figure if given.</td></tr><tr><td data-h="Input"><strong>Pressure switch setting</strong></td><td data-h="Where to find it">Watch the gauge through one cycle: low point is cut-in, high point is cut-out (e.g. 30/50, 40/60).</td></tr><tr><td data-h="Input"><strong>Current tank size (optional)</strong></td><td data-h="Where to find it">Label on the tank.</td></tr></tbody></table></div>
+<h2>How the math works</h2>
+<div class="math">drawdown needed = GPM × minimum run minutes
+pick            = smallest tank whose published drawdown at your
+                  switch setting ≥ drawdown needed
+precharge       = cut-in − 2 psi (tank empty)
+20/40 settings  = estimated (~15% above 30/50; not on the card)</div>
+<h2>Worked example</h2>
+<div class="math">10 GPM × 1 min = 10 gal needed at 30/50
+WX-203 (32 gal) ≈ 9.9 gal  → short
+WX-205 (34 gal) ≈ 10.5 gal → pick · precharge 28 psi</div><p class="small">Drawdowns from Amtrol Well-X-Trol specifications card MC7025 as published in the sizer.</p>
+<form class="calc" data-calc="drawdown" id="tp2-dd">
+<h3>Quick check: minimum drawdown and precharge</h3>
+<div class="fields">
+<div><label for="tp2-dd-g">Pump flow (GPM)</label><input id="tp2-dd-g" name="gpm" type="number" inputmode="decimal" min="0" step="0.5" placeholder="e.g. 10"></div>
+<div><label for="tp2-dd-m">Minimum run (minutes)</label><input id="tp2-dd-m" name="min" type="number" inputmode="decimal" min="0.5" step="0.5" value="1"></div>
+<div><label for="tp2-dd-c">Cut-in pressure (psi)</label><select id="tp2-dd-c" name="cutin"><option value="20">20 (20/40 switch)</option><option value="30" selected>30 (30/50 switch)</option><option value="40">40 (40/60 switch)</option><option value="50">50 (50/70 switch)</option></select></div>
+</div>
+<p class="nojs">Without JavaScript: drawdown needed = GPM × minutes. Precharge = cut-in − 2 psi, set with the tank empty.</p>
+<div class="result" aria-live="polite"></div>
+</form>
+<h2>Limits to know</h2><ul><li>Drawdowns come from one brand’s published card. Other brands differ; check the chart for the tank you buy.</li><li>A waterlogged tank acts small whatever its label. Check precharge before replacing.</li><li>Constant-pressure (variable-speed) systems follow their own tank and precharge rules.</li></ul>
+<div class="band"><h2>Run your own numbers</h2><p>The full tool handles your exact loads and settings, with explanations next to every result.</p><p><a class="btn" href="https://well-pressure-tank-sizer.vercel.app/">Open the Well Pressure Tank Sizer →</a></p></div>
+</div>
+</main>
+<footer class="foot">
+<div class="wrap grid">
+<div><b>Live City Life, Anywhere</b>
+<p>Guides and free planners for keeping water, lights, heat and a cold fridge when you live off the municipal grid or ride out outages.</p>
+<p><strong>Planning information only.</strong> This is not professional electrical, plumbing or well-system advice. Check nameplates and manufacturer charts, and use a licensed electrician or well contractor for anything wired or plumbed into your home.</p></div>
+<div><b>Guides</b><ul>
+<li><a href="../guides/backup-power.html">Backup power for a well home</a></li>
+<li><a href="../guides/well-water.html">Steady well water</a></li>
+<li><a href="../guides/heat-without-the-grid.html">Heat without the grid</a></li>
+<li><a href="../guides/winter-prep.html">Winter prep checklist</a></li></ul></div>
+<div><b>Free tools</b><ul>
+<li><a href="https://wellpump-generator-planner.vercel.app/">Well Pump Generator Planner</a></li>
+<li><a href="https://well-pressure-tank-sizer.vercel.app/">Well Pressure Tank Sizer</a></li>
+<li><a href="https://space-heater-planner.vercel.app/">Space Heater Planner</a></li>
+<li><a href="../tools/snowblower-size-picker.html">Snowblower Size Picker</a></li>
+<li><a href="../about.html">About &amp; disclosure</a></li></ul></div>
+</div>
+<div class="wrap legal">As an Amazon Associate I earn from qualifying purchases (tag wellpumpplann-20). Brand names mentioned without an Amazon link are not affiliate links. © 2026 Live City Life, Anywhere.</div>
+</footer>
+<script src="../assets/hub.js" defer></script>
+</body>
+</html>
