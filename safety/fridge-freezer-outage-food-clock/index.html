@@ -3,11 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Power Out? Is the Food in My Fridge and Freezer Still Safe? (Outage Food Clock)</title>
-<meta name="description" content="Power's out. Tap how long, whether you opened the doors and how full the freezer is. Get keep-or-toss for fridge and freezer, the clock time your window ends, and an item list, from USDA rules.">
+<title>Power Out: Is My Fridge and Freezer Food Still Safe?</title>
+<meta name="description" content="Power's out. Tap how long, whether you opened the doors and how full the freezer is. Get keep-or-toss for fridge and freezer and the time your window ends.">
 <link rel="canonical" href="https://live-city-life-anywhere.vercel.app/safety/fridge-freezer-outage-food-clock/">
-<meta property="og:title" content="Power Out? Is the Food in My Fridge and Freezer Still Safe? (Outage Food Clock)">
-<meta property="og:description" content="Power's out. Tap how long, whether you opened the doors and how full the freezer is. Get keep-or-toss for fridge and freezer, the clock time your window ends, and an item list, from USDA rules.">
+<script type="application/ld+json">
+[{"@context":"https://schema.org","@type":"WebApplication","name":"Fridge & Freezer Outage Food Clock","url":"https://live-city-life-anywhere.vercel.app/safety/fridge-freezer-outage-food-clock/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hub","item":"https://live-city-life-anywhere.vercel.app/"},{"@type":"ListItem","position":2,"name":"Safety","item":"https://live-city-life-anywhere.vercel.app/safety/"},{"@type":"ListItem","position":3,"name":"Fridge & Freezer Outage Food Clock"}]}]
+</script>
+<meta property="og:title" content="Power Out: Is My Fridge and Freezer Food Still Safe?">
+<meta property="og:description" content="Power's out. Tap how long, whether you opened the doors and how full the freezer is. Get keep-or-toss for fridge and freezer and the time your window ends.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://live-city-life-anywhere.vercel.app/safety/fridge-freezer-outage-food-clock/">
 <meta name="theme-color" content="#2c4bb5">
@@ -50,7 +53,7 @@
 .fo .med{border-left:6px solid var(--bad)}
 .fo .two{display:grid;gap:10px}@media(min-width:560px){.fo .two{grid-template-columns:1fr 1fr}}
 .fo .box{background:rgba(255,255,255,.08);border-radius:12px;padding:10px 12px}
-.fo .box h3{margin:0 0 4px;font-size:.95rem;color:#fff;opacity:.85}
+.fo .box h2{margin:0 0 4px;font-size:.95rem;color:#fff;opacity:.85}
 .fo .box .big{font-size:clamp(1.8rem,7vw,2.6rem)}
 .fo table.items{width:100%;border-collapse:collapse;font-size:.92rem}
 .fo table.items td{padding:7px 6px;border-bottom:1px solid var(--stone);vertical-align:top}
@@ -64,7 +67,7 @@
 <a class="brand" href="/"><span class="sunmark" aria-hidden="true"></span><span>Live City Life, <em>Anywhere</em></span></a>
 <nav class="nav" aria-label="Main"><a href="/power/">Power</a><a href="/water/">Water</a><a href="/heat-air/">Heat &amp; Air</a><a href="/safety/" aria-current="page">Safety</a><a href="/about.html">About</a></nav>
 </div></header>
-<div class="disclose"><div class="wrap"><p><strong>Disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. Amazon links are marked; we never show prices or ratings because they change. <a href="/about.html#disclosure">More</a></p></div></div>
+<div class="disclose"><div class="wrap"><p><strong>Disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. Amazon links are marked; we never show prices or ratings because they change. <a href="/about.html#disclosure">Full disclosure</a></p></div></div>
 <main id="main">
 <div class="fo">
 <p class="crumbs"><a href="/">Hub</a> › <a href="/safety/">Safety</a> › Fridge &amp; freezer outage food clock</p>
@@ -115,8 +118,8 @@
 
 <div class="out" aria-live="polite" id="out">
 <div class="two">
-<div class="box"><h3>Fridge</h3><div class="big" id="o-fbig">—</div><p class="verdict" id="o-fv"></p></div>
-<div class="box" id="o-zbox"><h3>Freezer</h3><div class="big" id="o-zbig">—</div><p class="verdict" id="o-zv"></p></div>
+<div class="box"><h2>Fridge</h2><div class="big" id="o-fbig">—</div><p class="verdict" id="o-fv"></p></div>
+<div class="box" id="o-zbox"><h2>Freezer</h2><div class="big" id="o-zbig">—</div><p class="verdict" id="o-zv"></p></div>
 </div>
 <div class="stats" style="margin-top:10px">
 <div>Fridge window ends<b id="o-fend">—</b></div>
