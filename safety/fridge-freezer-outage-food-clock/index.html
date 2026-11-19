@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Power Out? Is the Food in My Fridge and Freezer Still Safe? (Outage Food Clock)</title>
+<meta name="description" content="Power's out. Tap how long, whether you opened the doors and how full the freezer is. Get keep-or-toss for fridge and freezer, the clock time your window ends, and an item list, from USDA rules.">
+<link rel="canonical" href="https://live-city-life-anywhere.vercel.app/safety/fridge-freezer-outage-food-clock/">
+<meta property="og:title" content="Power Out? Is the Food in My Fridge and Freezer Still Safe? (Outage Food Clock)">
+<meta property="og:description" content="Power's out. Tap how long, whether you opened the doors and how full the freezer is. Get keep-or-toss for fridge and freezer, the clock time your window ends, and an item list, from USDA rules.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://live-city-life-anywhere.vercel.app/safety/fridge-freezer-outage-food-clock/">
+<meta name="theme-color" content="#2c4bb5">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/styles.css">
+<style>
+.fo{max-width:760px;margin:0 auto;padding:14px 18px 8px}
+.fo h1{font-size:clamp(1.5rem,5vw,2.2rem);margin:.25em 0 .2em}
+.fo .blunt{margin:0 0 12px;color:var(--muted)}
+.fo .card{background:#fff;border:1px solid var(--stone);border-radius:16px;padding:14px;margin:0 0 12px;box-shadow:0 8px 24px -18px rgba(30,53,127,.5)}
+.fo .step{font-weight:700;margin:0 0 8px;font-size:.98rem}
+.fo .step span{display:inline-block;width:26px;height:26px;border-radius:50%;background:var(--horizon);color:#fff;text-align:center;line-height:26px;margin-right:6px;font-size:.85rem}
+.fo .seg{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+@media(min-width:560px){.fo .seg.s4{grid-template-columns:repeat(4,1fr)}.fo .seg.s3{grid-template-columns:repeat(3,1fr)}}
+.fo .seg button{min-height:58px;border:2px solid var(--stone);background:var(--stone-2);border-radius:12px;font:inherit;font-weight:700;color:var(--ink);cursor:pointer;padding:6px 8px;line-height:1.2}
+.fo .seg button small{display:block;font-weight:500;font-size:.78rem;color:var(--muted)}
+.fo .seg button[aria-pressed=true]{border-color:var(--horizon);background:#e6ecfb;box-shadow:inset 0 0 0 1px var(--horizon)}
+.fo .custom{margin-top:8px;display:none}.fo .custom.on{display:block}
+.fo .custom input{width:100%;min-height:48px;font:inherit;padding:8px 12px;border:2px solid var(--stone);border-radius:10px;box-sizing:border-box}
+.fo .out{background:var(--ink);color:#fff;border-radius:16px;padding:16px;margin:0 0 12px}
+.fo .big{font-family:var(--display);font-size:clamp(2.2rem,9vw,3.4rem);font-weight:700;line-height:1}
+.fo .big small{font-size:.4em;font-weight:600;opacity:.85}
+.fo .verdict{margin:.5em 0 .7em;font-weight:700}
+.fo .verdict.bad{color:#ffb4a9}.fo .verdict.ok{color:#9fe3c0}.fo .verdict.warn{color:#ffd88a}
+.fo .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.fo .stats div{background:rgba(255,255,255,.08);border-radius:10px;padding:8px 10px;font-size:.85rem}
+.fo .stats b{display:block;font-family:var(--mono);font-size:1.15rem}
+.fo .shop{display:grid;gap:8px;margin-top:12px}
+.fo .shop a{display:flex;align-items:center;justify-content:center;min-height:52px;border-radius:999px;background:var(--sun);color:#3b2600;font-weight:800;text-decoration:none;text-align:center;padding:8px 14px}
+.fo .shop a.alt{background:#fff;color:var(--horizon-deep)}
+.fo .fine{font-size:.82rem;opacity:.85;margin:.6em 0 0}
+.fo .xl{display:grid;gap:8px}@media(min-width:560px){.fo .xl{grid-template-columns:repeat(3,1fr)}}
+.fo .xl a{display:block;background:#fff;border:1px solid var(--stone);border-left:6px solid var(--horizon);border-radius:12px;padding:10px 12px;text-decoration:none;color:var(--ink);font-weight:700}
+.fo .xl a span{display:block;font-weight:500;font-size:.85rem;color:var(--muted)}
+.fo ul.facts{padding-left:1.1em;margin:.3em 0}.fo ul.facts li{margin:.25em 0}
+
+.fo .seg.s5 button{min-height:58px}
+@media(min-width:560px){.fo .seg.s5{grid-template-columns:repeat(5,1fr)}}
+.fo .note{font-size:.86rem;color:var(--muted);margin:8px 0 0}
+.fo .med{border-left:6px solid var(--bad)}
+.fo .two{display:grid;gap:10px}@media(min-width:560px){.fo .two{grid-template-columns:1fr 1fr}}
+.fo .box{background:rgba(255,255,255,.08);border-radius:12px;padding:10px 12px}
+.fo .box h3{margin:0 0 4px;font-size:.95rem;color:#fff;opacity:.85}
+.fo .box .big{font-size:clamp(1.8rem,7vw,2.6rem)}
+.fo table.items{width:100%;border-collapse:collapse;font-size:.92rem}
+.fo table.items td{padding:7px 6px;border-bottom:1px solid var(--stone);vertical-align:top}
+.fo table.items td.s{font-weight:800;white-space:nowrap}
+.fo .k{color:#1d7a4c}.fo .t{color:#b3261e}.fo .c{color:#8a5a00}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="wrap bar">
+<a class="brand" href="/"><span class="sunmark" aria-hidden="true"></span><span>Live City Life, <em>Anywhere</em></span></a>
+<nav class="nav" aria-label="Main"><a href="/power/">Power</a><a href="/water/">Water</a><a href="/heat-air/">Heat &amp; Air</a><a href="/safety/" aria-current="page">Safety</a><a href="/about.html">About</a></nav>
+</div></header>
+<div class="disclose"><div class="wrap"><p><strong>Disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. Amazon links are marked; we never show prices or ratings because they change. <a href="/about.html#disclosure">More</a></p></div></div>
+<main id="main">
+<div class="fo">
+<p class="crumbs"><a href="/">Hub</a> › <a href="/safety/">Safety</a> › Fridge &amp; freezer outage food clock</p>
+<h1>Power's out. Is the food still safe?</h1>
+<p class="blunt">Tap 4 buttons. Get keep-or-toss for the fridge and the freezer, and the clock time your safe window ends. Rules from USDA.</p>
+
+<div class="card"><p class="step"><span>1</span>How long has the power been out?</p>
+<div class="seg s4" id="g-hrs">
+<button type="button" data-v="1">1 h</button>
+<button type="button" data-v="2">2 h</button>
+<button type="button" data-v="3">3 h</button>
+<button type="button" data-v="4">4 h</button>
+<button type="button" data-v="6">6 h</button>
+<button type="button" data-v="12">12 h<small>overnight</small></button>
+<button type="button" data-v="24">24 h</button>
+<button type="button" data-v="custom">Other<small>type hours</small></button>
+</div>
+<div class="custom" id="c-hrs"><label for="i-hrs">Hours without power</label><input id="i-hrs" type="number" inputmode="decimal" min="0" max="240" step="0.5" value="36"></div>
+</div>
+
+<div class="card"><p class="step"><span>2</span>Have the doors been opened?</p>
+<div class="seg s3" id="g-door">
+<button type="button" data-v="1">Kept shut<small>USDA times apply</small></button>
+<button type="button" data-v="0.75">A few times<small>window cut 25%</small></button>
+<button type="button" data-v="0.5">A lot<small>window cut 50%</small></button>
+</div></div>
+
+<div class="card"><p class="step"><span>3</span>How full is the freezer?</p>
+<div class="seg s3" id="g-frz">
+<button type="button" data-v="48">Full<small>~48 h if shut</small></button>
+<button type="button" data-v="24">Half full<small>~24 h if shut</small></button>
+<button type="button" data-v="0">Nothing frozen<small>skip freezer</small></button>
+</div></div>
+
+<div class="card"><p class="step"><span>4</span>Thermometer in the fridge? What does it read?</p>
+<div class="seg s4" id="g-therm">
+<button type="button" data-v="none">No thermometer<small>go by the clock</small></button>
+<button type="button" data-v="le40">40°F or colder</button>
+<button type="button" data-v="41">41–50°F</button>
+<button type="button" data-v="51">Above 50°F</button>
+</div>
+<div id="frzq"><p class="note" style="margin-top:12px;font-weight:700;color:var(--ink)">Freezer food right now:</p>
+<div class="seg s3" id="g-ftherm">
+<button type="button" data-v="none">Not checked</button>
+<button type="button" data-v="ice">Ice crystals / 40°F or colder<small>can refreeze</small></button>
+<button type="button" data-v="thaw">Soft and above 40°F</button>
+</div></div></div>
+
+<div class="out" aria-live="polite" id="out">
+<div class="two">
+<div class="box"><h3>Fridge</h3><div class="big" id="o-fbig">—</div><p class="verdict" id="o-fv"></p></div>
+<div class="box" id="o-zbox"><h3>Freezer</h3><div class="big" id="o-zbig">—</div><p class="verdict" id="o-zv"></p></div>
+</div>
+<div class="stats" style="margin-top:10px">
+<div>Fridge window ends<b id="o-fend">—</b></div>
+<div>Freezer window ends<b id="o-zend">—</b></div>
+</div>
+<div class="shop" id="o-shop"></div>
+<p class="fine">Rules: USDA/FoodSafety.gov say a closed fridge keeps food safe about 4 hours; a full closed freezer about 48 hours, half full about 24. Toss perishables held above 40°F for 2+ hours. Thawed freezer food with ice crystals or at 40°F or below can be refrozen. The 25%/50% cuts for opened doors are our cautious planning assumption, not a USDA number. A thermometer reading beats the clock. When in doubt, throw it out.</p>
+</div>
+
+<div class="card"><p class="step" style="margin-bottom:6px">Keep or toss: fridge items <span id="o-istate" style="all:unset;font-weight:500;color:var(--muted)"></span></p>
+<table class="items" id="o-items"></table>
+<p class="note">Summary of USDA's refrigerated-food chart. Never taste food to check it. Smell and looks don't tell you about bacteria.</p></div>
+
+<div class="card med"><p class="step" style="margin-bottom:4px">Do this now</p>
+<ul class="facts">
+<li><strong>Keep the doors shut.</strong> Every opening dumps cold air.</li>
+<li>Past 4 hours with no end in sight? Move milk, meat, leftovers and eggs to a cooler packed with ice. Keep it at 40°F or colder.</li>
+<li>USDA: 50 lb of dry ice holds a full 18 cu ft freezer for about 2 days. Handle dry ice with gloves and keep the room ventilated.</li>
+<li>Group frozen food together. It stays cold longer.</li>
+<li>Running a generator? Outside only, 20 ft from doors and windows. Check your CO alarms: <a href="/safety/smoke-co-alarm-planner/">CO alarm planner</a>.</li>
+</ul></div>
+
+<div class="card"><p class="step"><span>+</span>Next outage: keep the fridge running instead</p>
+<p class="note" style="margin-top:0">Yellow EnergyGuide label, "Estimated yearly electricity use" (kWh). No label? 600 is a common full-size figure.</p>
+<div class="custom on" style="margin:6px 0 10px"><label for="i-kwh">Fridge kWh per year</label><input id="i-kwh" type="number" inputmode="numeric" min="50" max="3000" step="10" value="600"></div>
+<div class="seg s3" id="g-days">
+<button type="button" data-v="1">1 day</button>
+<button type="button" data-v="2">2 days</button>
+<button type="button" data-v="3">3 days<small>big storm</small></button>
+</div>
+<p style="margin:12px 0 4px">Battery to keep it cold: <b id="o-pneed" style="font-family:var(--mono);font-size:1.2rem">—</b></p>
+<p class="note" id="o-pnote"></p>
+<div class="shop" id="o-pshop"></div>
+</div>
+
+<div class="xl">
+<a href="/power/cpap-oxygen-outage-runtime/">Power: CPAP &amp; oxygen runtime<span>Nights of breathing-machine battery</span></a>
+<a href="/heat-air/furnace-outage-runtime/">Heat: furnace outage runtime<span>Keep the gas furnace blower running</span></a>
+<a href="/water/sump-pump-backup-runtime/">Water: sump pump backup<span>Hours of pumping on a battery</span></a>
+</div>
+<p class="fine" style="color:var(--muted)">Sources: <a href="https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/keeping-food-safe-during-emergency" rel="noopener" target="_blank">USDA FSIS, Keeping Food Safe During an Emergency</a>; <a href="https://www.foodsafety.gov/food-safety-charts/food-safety-during-power-outage" rel="noopener" target="_blank">FoodSafety.gov, Food Safety During a Power Outage</a>. Battery math: label kWh ÷ 365 × days ÷ 85% inverter efficiency, plus a 20% reserve; the efficiency, reserve and the start-up output figure are our planning assumptions. Planning information only. Medicine that needs refrigeration (like insulin): ask your pharmacist.</p>
+</div>
+</main>
+<footer class="foot">
+<div class="wrap grid buckets-foot">
+<div><b>Live City Life, Anywhere</b>
+<p>Guides and free planners for keeping water, lights, heat and a cold fridge when you live off the municipal grid or ride out outages.</p>
+<p><strong>Planning information only.</strong> This is not professional electrical, plumbing or well-system advice. Check nameplates and manufacturer charts, and use a licensed electrician or well contractor for anything wired or plumbed into your home.</p></div>
+<div><b>Power</b><ul>
+<li><a href="https://wellpump-generator-planner.vercel.app/">Well Pump Generator Planner</a></li>
+<li><a href="/power/cpap-oxygen-outage-runtime/">CPAP &amp; Oxygen Outage Runtime</a></li>
+<li><a href="/guides/backup-power.html">Backup power guide</a></li>
+<li><a href="/power/">All Power tools &amp; guides</a></li></ul></div>
+<div><b>Water</b><ul>
+<li><a href="https://well-pressure-tank-sizer.vercel.app/">Well Pressure Tank Sizer</a></li>
+<li><a href="/water/sump-pump-backup-runtime/">Sump Pump Backup Runtime</a></li>
+<li><a href="/guides/well-water.html">Well water guide</a></li>
+<li><a href="/water/">All Water tools &amp; guides</a></li></ul></div>
+<div><b>Heat &amp; Air</b><ul>
+<li><a href="https://space-heater-planner.vercel.app/">Space Heater Planner</a></li>
+<li><a href="/tools/snowblower-size-picker.html">Snowblower Size Picker</a></li>
+<li><a href="/heat-air/furnace-outage-runtime/">Furnace Outage Runtime</a></li>
+<li><a href="/guides/heat-without-the-grid.html">Heat without the grid</a></li>
+<li><a href="/heat-air/">All Heat &amp; Air</a></li></ul></div>
+<div><b>Safety</b><ul>
+<li><a href="/safety/smoke-co-alarm-planner/">Smoke &amp; CO Alarm Planner</a></li>
+<li><a href="/safety/fridge-freezer-outage-food-clock/">Fridge &amp; Freezer Outage Food Clock</a></li>
+<li><a href="/guides/winter-prep.html">Winter prep checklist</a></li>
+<li><a href="/safety/">All Safety tools &amp; guides</a></li>
+<li><a href="/about.html">About &amp; disclosure</a></li></ul></div>
+</div>
+<div class="wrap legal">As an Amazon Associate I earn from qualifying purchases (tag wellpumpplann-20). Brand names mentioned without an Amazon link are not affiliate links. © 2026 Live City Life, Anywhere.</div>
+</footer>
+<script src="/assets/hub.js" defer></script>
+<script>
+(function(){'use strict';
+var TAG='wellpumpplann-20';
+var st={hrs:2,door:1,frz:48,therm:'none',ftherm:'none',days:2};
+var ITEMS=[
+['Raw or cooked meat, poultry, seafood, hot dogs, deli meat','p'],
+['Milk, cream, yogurt, sour cream','p'],
+['Soft cheeses (brie, ricotta, cottage, cream cheese, shredded)','p'],
+['Eggs, egg dishes, custards and puddings','p'],
+['Leftovers, cooked pasta and rice, casseroles, soups','p'],
+['Cut fruit and cut or cooked vegetables, salads','p'],
+['Opened baby formula','p'],
+['Opened mayo, tartar sauce, horseradish','m'],
+['Hard cheeses (cheddar, parmesan, Swiss)','k'],
+['Butter and margarine','k'],
+['Whole fresh fruit and raw whole vegetables','k'],
+['Ketchup, mustard, jelly, peanut butter, pickles, olives, soy sauce','k'],
+['Bread, rolls, cakes (no cream filling), tortillas','k']];
+function $(i){return document.getElementById(i)}
+function f(n){return Math.round(n).toLocaleString('en-US')}
+function hh(n){return n>=10?f(n)+' h':(Math.round(n*10)/10)+' h'}
+function clock(hFromNow){var d=new Date(Date.now()+hFromNow*3600000);return d.toLocaleString('en-US',{weekday:'short',hour:'numeric',minute:'2-digit'})}
+function amz(q,txt,cls){return '<a class="'+(cls||'')+'" rel="sponsored nofollow noopener" target="_blank" data-out="amazon" href="https://www.amazon.com/s?k='+encodeURIComponent(q)+'&tag='+TAG+'">'+txt+' <span style="font-weight:500">(Amazon)</span></a>'}
+function sizeClass(wh){var c=[512,1024,2048,3072,3840,5120,7680,10240];for(var i=0;i<c.length;i++)if(c[i]>=wh)return c[i];return null}
+function calc(){
+ var H=st.hrs==='custom'?(parseFloat($('i-hrs').value)||0):st.hrs;
+ var fw=4*st.door, left=fw-H, fstate;
+ // fridge
+ var fb=$('o-fbig'),fv=$('o-fv');
+ if(st.therm==='le40'){fstate='ok';fb.textContent='KEEP';fv.className='verdict ok';fv.textContent='40°F or colder: food is safe. Recheck every hour or two.';$('o-fend').textContent='Thermometer rules'}
+ else if(st.therm==='41'||st.therm==='51'){
+  fstate=H>=2?'toss':'warn';
+  if(H>=2){fb.textContent='TOSS';fv.className='verdict bad';fv.textContent='Above 40°F and out '+hh(H)+'. Toss perishables if they sat above 40°F for 2+ hours. Not sure how long? Toss them.'}
+  else{fb.textContent='ACT NOW';fv.className='verdict warn';fv.textContent='Above 40°F. Perishables have under 2 hours from when it warmed past 40°F. Ice them, cook them or toss them.'}
+  $('o-fend').textContent='Already past 40°F'}
+ else if(left>=0){fstate='ok';fb.innerHTML=left<=0?'0 <small>h left</small>':hh(left).replace(' h','')+' <small>h left</small>';fv.className='verdict '+(left<=1?'warn':'ok');fv.textContent=(left<=0?'Window ends now. Ice perishables or plan to toss them. ':left<=1?'Almost out. ':'Safe for now. ')+'Keep the doors shut. Get perishables into a cooler with ice before the window ends.';$('o-fend').textContent=clock(left)}
+ else{fstate='toss';fb.textContent='TOSS';fv.className='verdict bad';fv.textContent='Past the '+hh(fw)+' window with no thermometer. Toss perishables: meat, milk, eggs, leftovers, soft cheese.';$('o-fend').textContent='Ended '+hh(-left)+' ago'}
+ // freezer
+ var zb=$('o-zbig'),zv=$('o-zv');$('frzq').style.display=st.frz?'':'none';$('o-zbox').style.opacity=st.frz?1:.5;
+ if(!st.frz){zb.textContent='—';zv.className='verdict';zv.textContent='No frozen food entered.';$('o-zend').textContent='—'}
+ else if(st.ftherm==='ice'){zb.textContent='KEEP';zv.className='verdict ok';zv.textContent='Ice crystals or 40°F or colder: safe, and OK to refreeze. Quality may drop.';$('o-zend').textContent='Thermometer rules'}
+ else if(st.ftherm==='thaw'){zb.textContent=H>=2?'TOSS':'ACT NOW';zv.className='verdict '+(H>=2?'bad':'warn');zv.textContent=H>=2?'Thawed and above 40°F: toss meat, poultry, seafood, ice cream and leftovers held above 40°F for 2+ hours.':'Thawed above 40°F. Cook it now or toss it within 2 hours of warming past 40°F.';$('o-zend').textContent='Already thawed'}
+ else{var zw=st.frz*st.door,zl=zw-H;
+  if(zl>0){zb.innerHTML=hh(zl).replace(' h','')+' <small>h left</small>';zv.className='verdict '+(zl<=4?'warn':'ok');zv.textContent=(st.frz===48?'Full':'Half-full')+' freezer, '+(st.door===1?'doors shut':'doors opened')+'. Keep it shut. Check for ice crystals before the window ends.';$('o-zend').textContent=clock(zl)}
+  else{zb.textContent='CHECK';zv.className='verdict bad';zv.textContent='Past the '+hh(zw)+' window. Check each item: ice crystals or 40°F or colder = keep and refreeze. Soft and warm = toss.';$('o-zend').textContent='Ended '+hh(-zl)+' ago'}}
+ // items
+ var mayoToss=(st.therm==='51'&&H>8)||(st.therm==='none'&&H>8);
+ var rows='';ITEMS.forEach(function(it){var s,c;
+  if(it[1]==='k'){s='KEEP';c='k'}
+  else if(it[1]==='m'){if(st.therm==='le40'){s='KEEP';c='k'}else if(mayoToss){s='TOSS';c='t'}else{s='KEEP for now';c='c'}}
+  else{if(fstate==='ok'){s='KEEP';c='k'}else if(fstate==='warn'){s='ICE OR COOK';c='c'}else{s='TOSS';c='t'}}
+  rows+='<tr><td class="s '+c+'">'+s+'</td><td>'+it[0]+(it[1]==='m'?' <span style="color:var(--muted)">(toss if above 50°F for 8+ h)</span>':'')+'</td></tr>'});
+ $('o-items').innerHTML=rows;
+ $('o-istate').textContent='— power out '+hh(H);
+ var shop='';
+ if(st.therm==='none')shop+=amz('refrigerator freezer thermometer','Fridge &amp; freezer thermometers');
+ shop+=amz('cooler 50 quart ice retention','Coolers that hold ice for days',st.therm==='none'?'alt':'');
+ shop+=amz('reusable ice packs for cooler long lasting','Long-lasting ice packs','alt');
+ $('o-shop').innerHTML=shop;
+ // power station
+ var kwh=parseFloat($('i-kwh').value)||0,need=kwh*1000/365*st.days/0.85*1.2;
+ if(kwh>0){var cls=sizeClass(need);$('o-pneed').textContent=f(need)+' Wh';
+  $('o-pnote').textContent='About '+f(kwh*1000/365)+' Wh a day of fridge use. Look for a station with 1,000 W+ output so the compressor can start (rough rule of thumb), pure sine wave, LiFePO4 battery.';
+  $('o-pshop').innerHTML=amz('portable power station '+(cls||10240)+'Wh LiFePO4 pure sine wave','Shop '+(cls?(cls>=1000?(cls/1000).toFixed(1).replace(/\.0$/,'')+' kWh+':cls+' Wh+'):'expandable')+' power stations')+amz('plug in watt meter electricity usage monitor','Plug-in watt meter (measure your fridge)','alt')}
+ else{$('o-pneed').textContent='—';$('o-pshop').innerHTML=''}
+}
+function bind(id,key){var g=$(id);
+ g.addEventListener('click',function(e){var btn=e.target.closest('button');if(!btn)return;var v=btn.getAttribute('data-v');
+  st[key]=isNaN(+v)?v:+v;mark(id,key);var c=$('c-'+key);if(c)c.classList.toggle('on',v==='custom');calc()});
+ mark(id,key)}
+function mark(id,key){[].forEach.call($(id).querySelectorAll('button'),function(x){x.setAttribute('aria-pressed',String(x.getAttribute('data-v'))===String(st[key])?'true':'false')})}
+bind('g-hrs','hrs');bind('g-door','door');bind('g-frz','frz');bind('g-therm','therm');bind('g-ftherm','ftherm');bind('g-days','days');
+$('i-hrs').addEventListener('input',calc);$('i-kwh').addEventListener('input',calc);
+document.addEventListener('click',function(e){var a=e.target.closest('a[data-out]');if(!a)return;try{var n=+(localStorage.getItem('bank-out-clicks')||0)+1;localStorage.setItem('bank-out-clicks',n)}catch(_){};if(window.va)window.va('event',{name:'outbound',data:{dest:a.getAttribute('data-out'),page:'fridge-freezer-outage-food-clock'}})});
+calc();
+})();
+</script>
+<script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+<script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>
