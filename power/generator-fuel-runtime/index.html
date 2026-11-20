@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Power Out: How Much Gas or Propane Does My Generator Need?</title>
+<meta name="description" content="Pick your generator, fuel and what you're running. Get gallons or 20-lb tanks per day, hours per tank, and the total to stock for a multi-day outage.">
+<link rel="canonical" href="https://live-city-life-anywhere.vercel.app/power/generator-fuel-runtime/">
+<script type="application/ld+json">
+[{"@context":"https://schema.org","@type":"WebApplication","name":"Generator Fuel Runtime Calculator","url":"https://live-city-life-anywhere.vercel.app/power/generator-fuel-runtime/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hub","item":"https://live-city-life-anywhere.vercel.app/"},{"@type":"ListItem","position":2,"name":"Power","item":"https://live-city-life-anywhere.vercel.app/power/"},{"@type":"ListItem","position":3,"name":"Generator Fuel Runtime"}]}]
+</script>
+<meta property="og:title" content="Power Out: How Much Gas or Propane Does My Generator Need?">
+<meta property="og:description" content="Pick your generator, fuel and what you're running. Get gallons or 20-lb tanks per day, hours per tank, and the total to stock for a multi-day outage.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://live-city-life-anywhere.vercel.app/power/generator-fuel-runtime/">
+<meta name="theme-color" content="#2c4bb5">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/styles.css">
+<style>
+.fo{max-width:760px;margin:0 auto;padding:14px 18px 8px}
+.fo h1{font-size:clamp(1.5rem,5vw,2.2rem);margin:.25em 0 .2em}
+.fo .blunt{margin:0 0 12px;color:var(--muted)}
+.fo .card{background:#fff;border:1px solid var(--stone);border-radius:16px;padding:14px;margin:0 0 12px;box-shadow:0 8px 24px -18px rgba(30,53,127,.5)}
+.fo .step{font-weight:700;margin:0 0 8px;font-size:.98rem}
+.fo .step span{display:inline-block;width:26px;height:26px;border-radius:50%;background:var(--horizon);color:#fff;text-align:center;line-height:26px;margin-right:6px;font-size:.85rem}
+.fo .seg{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+@media(min-width:560px){.fo .seg.s4{grid-template-columns:repeat(4,1fr)}.fo .seg.s3{grid-template-columns:repeat(3,1fr)}}
+.fo .seg button{min-height:58px;border:2px solid var(--stone);background:var(--stone-2);border-radius:12px;font:inherit;font-weight:700;color:var(--ink);cursor:pointer;padding:6px 8px;line-height:1.2}
+.fo .seg button small{display:block;font-weight:500;font-size:.78rem;color:var(--muted)}
+.fo .seg button[aria-pressed=true]{border-color:var(--horizon);background:#e6ecfb;box-shadow:inset 0 0 0 1px var(--horizon)}
+.fo .custom{margin-top:8px;display:none}.fo .custom.on{display:block}
+.fo .custom input{width:100%;min-height:48px;font:inherit;padding:8px 12px;border:2px solid var(--stone);border-radius:10px;box-sizing:border-box}
+.fo .out{background:var(--ink);color:#fff;border-radius:16px;padding:16px;margin:0 0 12px}
+.fo .big{font-family:var(--display);font-size:clamp(2.2rem,9vw,3.4rem);font-weight:700;line-height:1}
+.fo .big small{font-size:.4em;font-weight:600;opacity:.85}
+.fo .verdict{margin:.5em 0 .7em;font-weight:700}
+.fo .verdict.bad{color:#ffb4a9}.fo .verdict.ok{color:#9fe3c0}.fo .verdict.warn{color:#ffd88a}
+.fo .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.fo .stats div{background:rgba(255,255,255,.08);border-radius:10px;padding:8px 10px;font-size:.85rem}
+.fo .stats b{display:block;font-family:var(--mono);font-size:1.15rem}
+.fo .shop{display:grid;gap:8px;margin-top:12px}
+.fo .shop a{display:flex;align-items:center;justify-content:center;min-height:52px;border-radius:999px;background:var(--sun);color:#3b2600;font-weight:800;text-decoration:none;text-align:center;padding:8px 14px}
+.fo .shop a.alt{background:#fff;color:var(--horizon-deep)}
+.fo .fine{font-size:.82rem;opacity:.85;margin:.6em 0 0}
+.fo .xl{display:grid;gap:8px}@media(min-width:560px){.fo .xl{grid-template-columns:repeat(3,1fr)}}
+.fo .xl a{display:block;background:#fff;border:1px solid var(--stone);border-left:6px solid var(--horizon);border-radius:12px;padding:10px 12px;text-decoration:none;color:var(--ink);font-weight:700}
+.fo .xl a span{display:block;font-weight:500;font-size:.85rem;color:var(--muted)}
+.fo ul.facts{padding-left:1.1em;margin:.3em 0}.fo ul.facts li{margin:.25em 0}
+
+.fo .seg.s5 button{min-height:58px}
+@media(min-width:560px){.fo .seg.s5{grid-template-columns:repeat(5,1fr)}}
+.fo .note{font-size:.86rem;color:var(--muted);margin:8px 0 0}
+.fo .med{border-left:6px solid var(--bad)}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="wrap bar">
+<a class="brand" href="/"><span class="sunmark" aria-hidden="true"></span><span>Live City Life, <em>Anywhere</em></span></a>
+<nav class="nav" aria-label="Main"><a href="/power/" aria-current="page">Power</a><a href="/water/">Water</a><a href="/heat-air/">Heat &amp; Air</a><a href="/safety/">Safety</a><a href="/about.html">About</a></nav>
+</div></header>
+<div class="disclose"><div class="wrap"><p><strong>Disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. Amazon links are marked; we never show prices or ratings because they change. <a href="/about.html#disclosure">Full disclosure</a></p></div></div>
+<main id="main">
+<div class="fo">
+<p class="crumbs"><a href="/">Hub</a> › <a href="/power/">Power</a> › Generator fuel runtime</p>
+<h1>Power's out. How much fuel do you actually need?</h1>
+<p class="blunt">Tap 6 buttons: get fuel per day, hours per tank, and the gas cans or propane tanks to have on hand before the outage.</p>
+
+<div class="card"><p class="step"><span>1</span>Your generator</p>
+<div class="seg s3" id="g-gen">
+<button type="button" data-v="s">Small inverter<small>2,000–2,500 W</small></button>
+<button type="button" data-v="m">Mid inverter / portable<small>3,500–4,500 W</small></button>
+<button type="button" data-v="l">Big portable<small>7,000–9,500 W</small></button>
+</div></div>
+
+<div class="card"><p class="step"><span>2</span>Fuel</p>
+<div class="seg" id="g-fuel">
+<button type="button" data-v="gas">Gasoline<small>5-gal cans</small></button>
+<button type="button" data-v="lp">Propane<small>20-lb BBQ tanks</small></button>
+</div></div>
+
+<div class="card"><p class="step"><span>3</span>What's plugged in (average, not surge)</p>
+<div class="seg s5" id="g-load">
+<button type="button" data-v="500">Fridge + lights + phones<small>~500 W</small></button>
+<button type="button" data-v="1000">+ gas furnace blower<small>~1,000 W</small></button>
+<button type="button" data-v="2000">+ well pump cycling<small>~2,000 W</small></button>
+<button type="button" data-v="3500">Most of the house<small>~3,500 W</small></button>
+<button type="button" data-v="custom">I know my watts<small>type it</small></button>
+</div>
+<div class="custom" id="c-load"><label for="i-load">Average watts while running</label><input id="i-load" type="number" inputmode="numeric" min="50" max="12000" step="50" value="1500"></div>
+<p class="note">Not sure? Add the running watts with our <a href="https://wellpump-generator-planner.vercel.app/">generator sizing planner</a>.</p>
+</div>
+
+<div class="card"><p class="step"><span>4</span>Hours you run it per day</p>
+<div class="seg s4" id="g-hpd">
+<button type="button" data-v="6">6 h<small>fridge blocks</small></button>
+<button type="button" data-v="12">12 h<small>nights + meals</small></button>
+<button type="button" data-v="18">18 h</button>
+<button type="button" data-v="24">24 h<small>nonstop</small></button>
+</div></div>
+
+<div class="card"><p class="step"><span>5</span>Days without power</p>
+<div class="seg s4" id="g-days">
+<button type="button" data-v="1">1 day</button>
+<button type="button" data-v="3">3 days<small>big storm</small></button>
+<button type="button" data-v="5">5 days<small>ice storm</small></button>
+<button type="button" data-v="7">7 days<small>hurricane</small></button>
+</div></div>
+
+<div class="card"><p class="step"><span>6</span>Outside temperature</p>
+<div class="seg s3" id="g-temp">
+<button type="button" data-v="warm">Above freezing</button>
+<button type="button" data-v="cold">Around 20°F</button>
+<button type="button" data-v="frigid">0°F or colder</button>
+</div></div>
+
+<div class="out" aria-live="polite" id="out">
+<div class="big" id="o-big">—</div>
+<p class="verdict" id="o-verdict"></p>
+<div class="stats">
+<div>Fuel per hour<b id="o-rate">—</b></div>
+<div>Fuel per day<b id="o-day">—</b></div>
+<div id="o-tanklbl">Hours per tank<b id="o-tank">—</b></div>
+<div>Refills per day<b id="o-refill">—</b></div>
+</div>
+<p class="verdict warn" id="o-cold" style="display:none"></p>
+<div class="shop" id="o-shop"></div>
+<p class="fine">Math: fuel per hour = a no-load burn for the generator class + about 0.7 lb of propane per kWh you draw (0.6 for big portables), converted to gasoline at 5.6 lb of propane per gallon by energy. We fitted those planning numbers to published maker runtimes, and they come out a bit higher than most spec sheets on purpose. Total stock adds a 15% reserve. Your manual's runtime chart beats ours.</p>
+</div>
+
+<div class="card med"><p class="step" style="margin-bottom:4px">Before you fill up</p>
+<ul class="facts">
+<li><strong>Generator outside, 20 ft from doors and windows.</strong> Never in a garage, even with the door open. Check your alarms: <a href="/safety/smoke-co-alarm-planner/">CO alarm planner</a>.</li>
+<li>Run fewer hours, not a bigger generator. A fridge holds cold in 2–4 hour blocks: <a href="/safety/fridge-freezer-outage-food-clock/">fridge food clock</a>.</li>
+<li>Pair it with a battery. Charge a power station while the generator runs, then shut it off overnight.</li>
+<li>Gas goes stale. Champion says stabilized gasoline keeps up to a year in a cool, dry place. Pour stored gas into your car every few months and refill.</li>
+<li>Cold kills small propane tanks. One 20-lb cylinder can only boil off so much gas: at 20°F, about 13,000 BTU an hour (US Carburetion chart). That's roughly 0.6 lb an hour. Use a 100-lb cylinder or two tanks on a manifold.</li>
+<li>Stop the engine and let it cool before refueling. Store cans and cylinders outdoors or in a detached shed, upright, away from flames. Check your local limits on stored fuel.</li>
+</ul></div>
+
+<div class="xl">
+<a href="/power/cpap-oxygen-outage-runtime/">Power: CPAP &amp; oxygen runtime<span>Nights on a battery</span></a>
+<a href="/heat-air/furnace-outage-runtime/">Heat: furnace outage runtime<span>Keep the furnace blower going</span></a>
+<a href="/water/sump-pump-backup-runtime/">Water: sump pump backup<span>Hours of pumping on a battery</span></a>
+</div>
+<p class="fine" style="color:var(--muted)">Anchor runtimes used to fit the model: Champion 2500 W dual-fuel inverter, up to 25 h on a 20-lb tank at 25% load; Champion 4500 W inverter, 21 h at 25% load on propane; Westinghouse WGen9500DF, 7 h per 20-lb tank at 50% load; Generac big portable, 6 h at 25% and 4.5 h at 50% load per 20-lb tank, and 14 h at 25% load on 7.5 gal of gas. Generator tank sizes (1, 2.3 and 7 gal) are typical for each class, not one model. Propane output is about 10% lower than gasoline, so the overload check derates propane. Planning information only.</p>
+</div>
+</main>
+<footer class="foot">
+<div class="wrap grid buckets-foot">
+<div><b>Live City Life, Anywhere</b>
+<p>Guides and free planners for keeping water, lights, heat and a cold fridge when you live off the municipal grid or ride out outages.</p>
+<p><strong>Planning information only.</strong> This is not professional electrical, plumbing or well-system advice. Check nameplates and manufacturer charts, and use a licensed electrician or well contractor for anything wired or plumbed into your home.</p></div>
+<div><b>Power</b><ul>
+<li><a href="https://wellpump-generator-planner.vercel.app/">Well Pump Generator Planner</a></li>
+<li><a href="/power/cpap-oxygen-outage-runtime/">CPAP &amp; Oxygen Outage Runtime</a></li>
+<li><a href="/power/generator-fuel-runtime/">Generator Fuel Runtime</a></li>
+<li><a href="/guides/backup-power.html">Backup power guide</a></li>
+<li><a href="/power/">All Power tools &amp; guides</a></li></ul></div>
+<div><b>Water</b><ul>
+<li><a href="https://well-pressure-tank-sizer.vercel.app/">Well Pressure Tank Sizer</a></li>
+<li><a href="/water/sump-pump-backup-runtime/">Sump Pump Backup Runtime</a></li>
+<li><a href="/guides/well-water.html">Well water guide</a></li>
+<li><a href="/water/">All Water tools &amp; guides</a></li></ul></div>
+<div><b>Heat &amp; Air</b><ul>
+<li><a href="https://space-heater-planner.vercel.app/">Space Heater Planner</a></li>
+<li><a href="/tools/snowblower-size-picker.html">Snowblower Size Picker</a></li>
+<li><a href="/heat-air/furnace-outage-runtime/">Furnace Outage Runtime</a></li>
+<li><a href="/guides/heat-without-the-grid.html">Heat without the grid</a></li>
+<li><a href="/heat-air/">All Heat &amp; Air</a></li></ul></div>
+<div><b>Safety</b><ul>
+<li><a href="/safety/smoke-co-alarm-planner/">Smoke &amp; CO Alarm Planner</a></li>
+<li><a href="/guides/winter-prep.html">Winter prep checklist</a></li>
+<li><a href="/safety/">All Safety tools &amp; guides</a></li>
+<li><a href="/about.html">About &amp; disclosure</a></li></ul></div>
+</div>
+<div class="wrap legal">As an Amazon Associate I earn from qualifying purchases (tag wellpumpplann-20). Brand names mentioned without an Amazon link are not affiliate links. © 2026 Live City Life, Anywhere.</div>
+</footer>
+<script src="/assets/hub.js" defer></script>
+<script>
+(function(){'use strict';
+var TAG='wellpumpplann-20';
+var GEN={s:{base:0.5,k:0.7,run:2000,tank:1},m:{base:0.38,k:0.7,run:3500,tank:2.3},l:{base:1.2,k:0.6,run:7500,tank:7}};
+var LB_PER_GAL=5.6,VAP20={warm:null,cold:0.6,frigid:0.3};
+var st={gen:'m',fuel:'gas',load:1000,hpd:12,days:3,temp:'cold'};
+function $(i){return document.getElementById(i)}
+function f(n){return Math.round(n).toLocaleString('en-US')}
+function d1(n){return n>=10?f(n):n.toFixed(1)}
+function amz(q,txt,cls){return '<a class="'+(cls||'')+'" rel="sponsored nofollow noopener" target="_blank" data-out="amazon" href="https://www.amazon.com/s?k='+encodeURIComponent(q)+'&tag='+TAG+'">'+txt+' <span style="font-weight:500">(Amazon)</span></a>'}
+function calc(){
+ var g=GEN[st.gen],w=st.load==='custom'?(parseFloat($('i-load').value)||0):st.load;
+ if(!(w>0)){$('o-big').textContent='—';return}
+ var lp=st.fuel==='lp',cap=lp?g.run*0.9:g.run,over=w>cap,kw=Math.min(w,cap)/1000;
+ var lbh=g.base+g.k*kw,rate=lp?lbh:lbh/LB_PER_GAL;
+ var day=rate*st.hpd,total=day*st.days*1.15;
+ var unit=lp?'lb':'gal';
+ var tankHrs=lp?20/rate:g.tank/rate;
+ $('o-rate').textContent=(lp?d1(rate):rate.toFixed(2))+' '+unit+'/h';
+ $('o-day').textContent=d1(day)+' '+unit;
+ $('o-tanklbl').firstChild.nodeValue=lp?'Hours per 20-lb tank':'Hours per tank of gas';
+ $('o-tank').textContent=d1(tankHrs)+' h';
+ $('o-refill').textContent=d1(st.hpd/tankHrs);
+ var big;
+ if(lp){var t20=Math.ceil(total/20),t100=Math.ceil(total/100);big=t20+' <small>× 20-lb tanks ('+f(total)+' lb)</small>'}
+ else{var cans=Math.ceil(total/5);big=cans+' <small>× 5-gal cans ('+d1(total)+' gal)</small>'}
+ $('o-big').innerHTML=big;
+ var v=$('o-verdict');
+ if(over){v.className='verdict bad';v.textContent='Overloaded: '+f(w)+' W is more than this generator runs'+(lp?' on propane':'')+' (~'+f(cap)+' W). Step up a class or drop loads.'}
+ else if(st.hpd===24){v.className='verdict warn';v.textContent='Nonstop burns the most fuel. Running '+(st.days>1?'12 h a day':'half the day')+' cuts it about in half.'}
+ else{v.className='verdict ok';v.textContent='Stock '+(lp?f(total)+' lb of propane':d1(total)+' gal of gas')+' for '+st.days+' day'+(st.days>1?'s':'')+' at '+st.hpd+' h a day, 15% reserve included.'}
+ var c=$('o-cold'),vap=VAP20[st.temp];
+ if(lp&&vap&&rate>vap){var n=Math.ceil(rate/vap);c.style.display='block';c.textContent='Cold warning: at '+(st.temp==='cold'?'20°F':'0°F')+' one 20-lb tank can\'t boil off '+d1(rate)+' lb/h. Expect it to sputter before it\'s empty. Use a 100-lb cylinder or '+n+'+ tanks on a manifold.'}
+ else if(!lp&&st.temp!=='warm'){c.style.display='block';c.textContent='Cold start: use fresh, stabilized gas and the right winter oil from your manual.'}
+ else c.style.display='none';
+ var shop='';
+ if(lp){shop+=amz('propane tank manifold splitter 2 tanks generator','Two-tank propane manifolds');shop+=amz('dual fuel inverter generator propane','Dual-fuel inverter generators','alt');shop+=amz('propane tank gauge 20 lb','Propane tank gauges','alt')}
+ else{shop+=amz('5 gallon gas can','5-gallon gas cans');shop+=amz('fuel stabilizer gasoline 2 year','Fuel stabilizer','alt');shop+=amz('dual fuel inverter generator','Dual-fuel generators (gas + propane)','alt')}
+ if(over)shop+=amz('portable generator '+(st.gen==='s'?'4500 watt':'9500 watt')+' dual fuel','Next size up generators','alt');
+ shop+=amz('portable power station 2000Wh LiFePO4','Power stations (run the generator fewer hours)','alt');
+ $('o-shop').innerHTML=shop;
+}
+function bind(id,key){var g=$(id);
+ g.addEventListener('click',function(e){var btn=e.target.closest('button');if(!btn)return;var v=btn.getAttribute('data-v');
+  st[key]=isNaN(+v)?v:+v;mark(id,key);var c=$('c-'+key);if(c)c.classList.toggle('on',v==='custom');calc()});
+ mark(id,key)}
+function mark(id,key){[].forEach.call($(id).querySelectorAll('button'),function(x){x.setAttribute('aria-pressed',String(x.getAttribute('data-v'))===String(st[key])?'true':'false')})}
+bind('g-gen','gen');bind('g-fuel','fuel');bind('g-load','load');bind('g-hpd','hpd');bind('g-days','days');bind('g-temp','temp');
+$('i-load').addEventListener('input',calc);
+document.addEventListener('click',function(e){var a=e.target.closest('a[data-out]');if(!a)return;try{var n=+(localStorage.getItem('bank-out-clicks')||0)+1;localStorage.setItem('bank-out-clicks',n)}catch(_){};if(window.va)window.va('event',{name:'outbound',data:{dest:a.getAttribute('data-out'),page:'generator-fuel-runtime'}})});
+calc();
+})();
+</script>
+<script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+<script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>
