@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Water Out or Boil Notice? How Much Water Do You Need?</title>
+<meta name="description" content="Boil notice, no water, or do-not-drink order? Tap 6 buttons: gallons to have, days your stock lasts, pots to boil a day, bleach drops, and what is safe to use.">
+<link rel="canonical" href="https://live-city-life-anywhere.vercel.app/water/water-outage-boil-notice-planner/">
+<script type="application/ld+json">
+[{"@context":"https://schema.org","@type":"WebApplication","name":"Water Outage & Boil Notice Planner","url":"https://live-city-life-anywhere.vercel.app/water/water-outage-boil-notice-planner/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hub","item":"https://live-city-life-anywhere.vercel.app/"},{"@type":"ListItem","position":2,"name":"Water","item":"https://live-city-life-anywhere.vercel.app/water/"},{"@type":"ListItem","position":3,"name":"Water Outage & Boil Notice Planner"}]}]
+</script>
+<meta property="og:title" content="Water Out or Boil Notice? How Much Water Do You Need?">
+<meta property="og:description" content="Boil notice, no water, or do-not-drink order? Tap 6 buttons: gallons to have, days your stock lasts, pots to boil a day, bleach drops, and what is safe to use.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://live-city-life-anywhere.vercel.app/water/water-outage-boil-notice-planner/">
+<meta name="theme-color" content="#2c4bb5">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/styles.css">
+<style>
+.fo{max-width:760px;margin:0 auto;padding:14px 18px 8px}
+.fo h1{font-size:clamp(1.5rem,5vw,2.2rem);margin:.25em 0 .2em}
+.fo .blunt{margin:0 0 12px;color:var(--muted)}
+.fo .card{background:#fff;border:1px solid var(--stone);border-radius:16px;padding:14px;margin:0 0 12px;box-shadow:0 8px 24px -18px rgba(30,53,127,.5)}
+.fo .step{font-weight:700;margin:0 0 8px;font-size:.98rem}
+.fo .step span{display:inline-block;width:26px;height:26px;border-radius:50%;background:var(--horizon);color:#fff;text-align:center;line-height:26px;margin-right:6px;font-size:.85rem}
+.fo .seg{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+@media(min-width:560px){.fo .seg.s4{grid-template-columns:repeat(4,1fr)}.fo .seg.s3{grid-template-columns:repeat(3,1fr)}}
+.fo .seg button{min-height:58px;border:2px solid var(--stone);background:var(--stone-2);border-radius:12px;font:inherit;font-weight:700;color:var(--ink);cursor:pointer;padding:6px 8px;line-height:1.2}
+.fo .seg button small{display:block;font-weight:500;font-size:.78rem;color:var(--muted)}
+.fo .seg button[aria-pressed=true]{border-color:var(--horizon);background:#e6ecfb;box-shadow:inset 0 0 0 1px var(--horizon)}
+.fo .custom{margin-top:8px;display:none}.fo .custom.on{display:block}
+.fo .custom input{width:100%;min-height:48px;font:inherit;padding:8px 12px;border:2px solid var(--stone);border-radius:10px;box-sizing:border-box}
+.fo .out{background:var(--ink);color:#fff;border-radius:16px;padding:16px;margin:0 0 12px}
+.fo .big{font-family:var(--display);font-size:clamp(2.2rem,9vw,3.4rem);font-weight:700;line-height:1}
+.fo .big small{font-size:.4em;font-weight:600;opacity:.85}
+.fo .verdict{margin:.5em 0 .7em;font-weight:700}
+.fo .verdict.bad{color:#ffb4a9}.fo .verdict.ok{color:#9fe3c0}.fo .verdict.warn{color:#ffd88a}
+.fo .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.fo .stats div{background:rgba(255,255,255,.08);border-radius:10px;padding:8px 10px;font-size:.85rem}
+.fo .stats b{display:block;font-family:var(--mono);font-size:1.15rem}
+.fo .shop{display:grid;gap:8px;margin-top:12px}
+.fo .shop a{display:flex;align-items:center;justify-content:center;min-height:52px;border-radius:999px;background:var(--sun);color:#3b2600;font-weight:800;text-decoration:none;text-align:center;padding:8px 14px}
+.fo .shop a.alt{background:#fff;color:var(--horizon-deep)}
+.fo .fine{font-size:.82rem;opacity:.85;margin:.6em 0 0}
+.fo .xl{display:grid;gap:8px}@media(min-width:560px){.fo .xl{grid-template-columns:repeat(3,1fr)}}
+.fo .xl a{display:block;background:#fff;border:1px solid var(--stone);border-left:6px solid var(--horizon);border-radius:12px;padding:10px 12px;text-decoration:none;color:var(--ink);font-weight:700}
+.fo .xl a span{display:block;font-weight:500;font-size:.85rem;color:var(--muted)}
+.fo ul.facts{padding-left:1.1em;margin:.3em 0}.fo ul.facts li{margin:.25em 0}
+
+.fo .seg.s5 button{min-height:58px}
+@media(min-width:560px){.fo .seg.s5{grid-template-columns:repeat(5,1fr)}}
+.fo .note{font-size:.86rem;color:var(--muted);margin:8px 0 0}
+.fo .med{border-left:6px solid var(--bad)}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="wrap bar">
+<a class="brand" href="/"><span class="sunmark" aria-hidden="true"></span><span>Live City Life, <em>Anywhere</em></span></a>
+<nav class="nav" aria-label="Main"><a href="/power/">Power</a><a href="/water/" aria-current="page">Water</a><a href="/heat-air/">Heat &amp; Air</a><a href="/safety/">Safety</a><a href="/about.html">About</a></nav>
+</div></header>
+<div class="disclose"><div class="wrap"><p><strong>Disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. Amazon links are marked; we never show prices or ratings because they change. <a href="/about.html#disclosure">Full disclosure</a></p></div></div>
+<main id="main">
+<div class="fo">
+<p class="crumbs"><a href="/">Hub</a> › <a href="/water/">Water</a> › Water outage &amp; boil notice</p>
+<h1>Water's out or unsafe. How much do you need?</h1>
+<p class="blunt">Tap 6 buttons: gallons to have, how many days your stock lasts, and exactly what's safe to use.</p>
+
+<div class="card"><p class="step"><span>1</span>What did the water company say?</p>
+<div class="seg s3" id="g-mode">
+<button type="button" data-v="boil">Boil water notice<small>tap runs, germs possible</small></button>
+<button type="button" data-v="none">No water at all<small>main break, well pump down</small></button>
+<button type="button" data-v="dnd">Do not drink<small>chemicals, boiling won't fix</small></button>
+</div></div>
+
+<div class="card"><p class="step"><span>2</span>People at home</p>
+<div class="seg s5" id="g-ppl">
+<button type="button" data-v="1">1</button>
+<button type="button" data-v="2">2</button>
+<button type="button" data-v="4">4</button>
+<button type="button" data-v="6">6</button>
+<button type="button" data-v="custom">Other<small>type it</small></button>
+</div>
+<div class="custom" id="c-ppl"><label for="i-ppl">Number of people</label><input id="i-ppl" type="number" inputmode="numeric" min="1" max="30" step="1" value="3"></div>
+</div>
+
+<div class="card"><p class="step"><span>3</span>Pets</p>
+<div class="seg s3" id="g-pet">
+<button type="button" data-v="0">None</button>
+<button type="button" data-v="0.25">Cat or small dog<small>~1 qt/day</small></button>
+<button type="button" data-v="0.75">Big dog or 2+ pets<small>~3 qt/day</small></button>
+</div></div>
+
+<div class="card"><p class="step"><span>4</span>How long could it last?</p>
+<div class="seg s4" id="g-days">
+<button type="button" data-v="1">1 day<small>quick repair</small></button>
+<button type="button" data-v="3">3 days<small>main break</small></button>
+<button type="button" data-v="7">7 days<small>storm, freeze</small></button>
+<button type="button" data-v="14">14 days<small>Ready.gov goal</small></button>
+</div></div>
+
+<div class="card"><p class="step"><span>5</span>Drinkable water you have right now</p>
+<div class="seg s5" id="g-have">
+<button type="button" data-v="0">None</button>
+<button type="button" data-v="3.17">1 case<small>24 × 16.9 oz</small></button>
+<button type="button" data-v="5">5 gal<small>1 jug</small></button>
+<button type="button" data-v="15">15 gal<small>3 jugs</small></button>
+<button type="button" data-v="custom">Other<small>gallons</small></button>
+</div>
+<div class="custom" id="c-have"><label for="i-have">Gallons of drinkable water on hand</label><input id="i-have" type="number" inputmode="decimal" min="0" max="2000" step="0.5" value="10"></div>
+</div>
+
+<div class="card"><p class="step"><span>6</span>Weather</p>
+<div class="seg" id="g-hot">
+<button type="button" data-v="1">Normal</button>
+<button type="button" data-v="2">Very hot<small>needs can double</small></button>
+</div></div>
+
+<div class="out" aria-live="polite" id="out">
+<div class="big" id="o-big">—</div>
+<p class="verdict" id="o-verdict"></p>
+<div class="stats">
+<div>Drinking + cooking per day<b id="o-day">—</b></div>
+<div>Your stock lasts<b id="o-last">—</b></div>
+<div id="o-l3">Still to get<b id="o-short">—</b></div>
+<div id="o-l4">Pots to boil a day<b id="o-pots">—</b></div>
+</div>
+<p class="verdict warn" id="o-extra" style="display:none"></p>
+<div class="shop" id="o-shop"></div>
+<p class="fine">Math: 1 gallon per person per day for drinking, cooking and teeth (Ready.gov), doubled in very hot weather. Pets are our estimate. Total adds a 10% spill-and-waste reserve. A case of 24 half-liter bottles is about 3.2 gallons. Boil pots assume an 8-quart stockpot filled to 6 quarts (1.5 gallons a batch).</p>
+</div>
+
+<div class="card med"><p class="step" style="margin-bottom:4px" id="o-safe-h">What's safe right now</p>
+<ul class="facts" id="o-safe"></ul></div>
+
+<div class="card"><p class="step" style="margin-bottom:4px">Can't boil? Bleach drops for clear water (EPA)</p>
+<p class="note" style="margin-top:0">Plain, unscented bleach only. Stir, wait 30 minutes; it should smell slightly of chlorine. Double the drops if the water is cloudy, colored or very cold. Never for a do-not-drink notice.</p>
+<div class="seg s4" id="g-gal">
+<button type="button" data-v="0.25">1 quart</button>
+<button type="button" data-v="1">1 gallon</button>
+<button type="button" data-v="2">2 gallons</button>
+<button type="button" data-v="5">5 gallons</button>
+</div>
+<div class="stats" style="margin-top:10px;color:var(--ink)">
+<div style="background:var(--stone-2)">6% bleach<b id="o-b6">—</b></div>
+<div style="background:var(--stone-2)">8.25% bleach<b id="o-b8">—</b></div>
+</div>
+</div>
+
+<div class="xl">
+<a href="https://wellpump-generator-planner.vercel.app/">Power: on a well? No power = no water<span>Size a generator for the pump</span></a>
+<a href="/water/sump-pump-backup-runtime/">Water: sump pump backup<span>Hours of pumping on a battery</span></a>
+<a href="/safety/fridge-freezer-outage-food-clock/">Safety: fridge food clock<span>What to keep, what to toss</span></a>
+</div>
+<p class="fine" style="color:var(--muted)">Sources: CDC drinking water advisories (boil 1 minute, 3 minutes above 6,500 ft; bathing, teeth, dishes, fridge ice; do-not-drink and do-not-use notices); EPA emergency disinfection of drinking water (bleach table, 3 minutes above 5,000 ft); Ready.gov water (1 gallon per person per day, hot weather can double it, 2-week supply if you can). Toilet flush figure is the 1.6-gallon federal limit for new toilets; flushes per day are our estimate. Always follow your water utility's notice. Planning information only.</p>
+</div>
+</main>
+<footer class="foot">
+<div class="wrap grid buckets-foot">
+<div><b>Live City Life, Anywhere</b>
+<p>Guides and free planners for keeping water, lights, heat and a cold fridge when you live off the municipal grid or ride out outages.</p>
+<p><strong>Planning information only.</strong> This is not professional electrical, plumbing or well-system advice. Check nameplates and manufacturer charts, and use a licensed electrician or well contractor for anything wired or plumbed into your home.</p></div>
+<div><b>Power</b><ul>
+<li><a href="https://wellpump-generator-planner.vercel.app/">Well Pump Generator Planner</a></li>
+<li><a href="/power/cpap-oxygen-outage-runtime/">CPAP &amp; Oxygen Outage Runtime</a></li>
+<li><a href="/power/generator-fuel-runtime/">Generator Fuel Runtime</a></li>
+<li><a href="/guides/backup-power.html">Backup power guide</a></li>
+<li><a href="/power/">All Power tools &amp; guides</a></li></ul></div>
+<div><b>Water</b><ul>
+<li><a href="https://well-pressure-tank-sizer.vercel.app/">Well Pressure Tank Sizer</a></li>
+<li><a href="/water/sump-pump-backup-runtime/">Sump Pump Backup Runtime</a></li>
+<li><a href="/water/water-outage-boil-notice-planner/">Water Outage &amp; Boil Notice Planner</a></li>
+<li><a href="/guides/well-water.html">Well water guide</a></li>
+<li><a href="/water/">All Water tools &amp; guides</a></li></ul></div>
+<div><b>Heat &amp; Air</b><ul>
+<li><a href="https://space-heater-planner.vercel.app/">Space Heater Planner</a></li>
+<li><a href="/tools/snowblower-size-picker.html">Snowblower Size Picker</a></li>
+<li><a href="/heat-air/furnace-outage-runtime/">Furnace Outage Runtime</a></li>
+<li><a href="/guides/heat-without-the-grid.html">Heat without the grid</a></li>
+<li><a href="/heat-air/">All Heat &amp; Air</a></li></ul></div>
+<div><b>Safety</b><ul>
+<li><a href="/safety/smoke-co-alarm-planner/">Smoke &amp; CO Alarm Planner</a></li>
+<li><a href="/guides/winter-prep.html">Winter prep checklist</a></li>
+<li><a href="/safety/">All Safety tools &amp; guides</a></li>
+<li><a href="/about.html">About &amp; disclosure</a></li></ul></div>
+</div>
+<div class="wrap legal">As an Amazon Associate I earn from qualifying purchases (tag wellpumpplann-20). Brand names mentioned without an Amazon link are not affiliate links. © 2026 Live City Life, Anywhere.</div>
+</footer>
+<script src="/assets/hub.js" defer></script>
+<script>
+(function(){'use strict';
+var TAG='wellpumpplann-20';
+var st={mode:'boil',ppl:2,pet:0,days:3,have:0,hot:1,gal:1};
+var B6={0.25:'2 drops',1:'8 drops',2:'16 drops (1/4 tsp)',5:'40 drops (1/2 tsp)'},B8={0.25:'2 drops',1:'6 drops',2:'12 drops (1/8 tsp)',5:'30 drops'};
+function $(i){return document.getElementById(i)}
+function f(n){return Math.round(n).toLocaleString('en-US')}
+function d1(n){return n>=10?f(n):(Math.round(n*10)/10).toString()}
+function amz(q,txt,cls){return '<a class="'+(cls||'')+'" rel="sponsored nofollow noopener" target="_blank" data-out="amazon" href="https://www.amazon.com/s?k='+encodeURIComponent(q)+'&tag='+TAG+'">'+txt+' <span style="font-weight:500">(Amazon)</span></a>'}
+var SAFE={
+boil:['<strong>Drink, cook, brush teeth, make formula:</strong> bottled water, or tap water at a full rolling boil for 1 minute (3 minutes above 6,500 ft), cooled.','<strong>Filters don\'t count.</strong> Boil even if it went through a fridge or pitcher filter.','<strong>No fridge ice or water dispenser.</strong> Toss ice made since the notice.','<strong>Shower: yes</strong>, mouth closed. Sponge-bathe babies and toddlers.','<strong>Dishwasher: yes</strong> if it has a sanitize cycle or hits 150°F. By hand: wash, then soak 1 minute in 1 tsp unscented bleach per gallon of warm water, air dry.','<strong>Laundry: normal.</strong> Handwashing with soap is usually fine; follow your utility.'],
+none:['<strong>Drinking water first.</strong> Bottled or stored water for drinking, cooking, teeth and formula.','<strong>Fill the tub now</strong> if any pressure is left. That water is for flushing and washing, not drinking.','<strong>Flush with a bucket:</strong> pour 1–2 gallons fast into the bowl. Don\'t flush every time.','<strong>When water comes back, expect a boil notice.</strong> Run cold taps a few minutes once the utility says so.','<strong>On a well?</strong> No power means no pump. A generator or a battery inverter sized for the pump brings it back.','<strong>Paper plates and hand sanitizer</strong> stretch your stock the most.'],
+dnd:['<strong>Do not boil it.</strong> Boiling does not remove chemicals and can concentrate them.','<strong>Drink and cook with bottled water only.</strong> Bleach and most home filters won\'t fix it either.','<strong>Bathing and dishes:</strong> follow your utility\'s notice exactly. A do-not-use notice means no contact at all.','<strong>No fridge ice or water dispenser.</strong>','<strong>Pets get bottled water too.</strong>']};
+function calc(){
+ var p=st.ppl==='custom'?Math.max(1,Math.round(parseFloat($('i-ppl').value)||0)):st.ppl;
+ var have=st.have==='custom'?Math.max(0,parseFloat($('i-have').value)||0):st.have;
+ var day=p*st.hot+st.pet, total=day*st.days*1.1, short=Math.max(0,total-have), last=have/day;
+ $('o-big').innerHTML=d1(total)+' <small>gal of drinkable water for '+st.days+' day'+(st.days>1?'s':'')+'</small>';
+ $('o-day').textContent=d1(day)+' gal';
+ $('o-last').textContent=have>0?(last<1?f(last*24)+' hours':d1(last)+' days'):'0';
+ var v=$('o-verdict');
+ if(short<=0){v.className='verdict ok';v.textContent='You\'re covered for '+st.days+' day'+(st.days>1?'s':'')+'. Stock lasts about '+d1(last)+' days.'}
+ else if(st.mode==='boil'){v.className='verdict warn';v.textContent='Short '+d1(short)+' gal. You can boil the rest: '+Math.ceil(day/1.5)+' pot'+(Math.ceil(day/1.5)>1?'s':'')+' a day covers you.'}
+ else{v.className='verdict bad';v.textContent='Short '+d1(short)+' gal of drinkable water. '+(st.mode==='dnd'?'Bottled only. Boiling won\'t fix this notice.':'Get it today before shelves empty.')}
+ var cases=Math.ceil(short/3.17),jugs=Math.ceil(short/5);
+ $('o-short').textContent=short<=0?'Nothing':(cases+' cases or '+jugs+' × 5-gal');
+ var x=$('o-extra');
+ if(st.mode==='boil'){$('o-l4').firstChild.nodeValue='Pots to boil a day';$('o-pots').textContent=Math.ceil(day/1.5)+' × 6-qt';x.style.display='block';x.textContent='Boil 1 full minute at a rolling boil (3 min above 6,500 ft). Each pot needs about 30 min to cool, so boil one before bed for morning coffee and toothbrushes.'}
+ else if(st.mode==='none'){var fl=p*3*1.6;$('o-l4').firstChild.nodeValue='Toilet flush water a day';$('o-pots').textContent=d1(fl)+' gal';x.style.display='block';x.textContent='Plus about '+f(fl*st.days)+' gal of non-drinking water to flush for '+st.days+' days (3 flushes a person a day at 1.6 gal, our estimate). Tub, rain barrel or pool water is fine for this.'}
+ else{$('o-l4').firstChild.nodeValue='Pots to boil a day';$('o-pots').textContent='Don\'t boil';x.style.display='block';x.textContent='Do-not-drink means chemicals or toxins. Boiling, bleach and pitcher filters do not make it safe. Bottled water only until the utility lifts it.'}
+ $('o-safe-h').textContent=st.mode==='boil'?'Boil notice: what\'s safe':st.mode==='none'?'No water: what to do':'Do-not-drink: what\'s safe';
+ $('o-safe').innerHTML='<li>'+SAFE[st.mode].join('</li><li>')+'</li>';
+ $('o-b6').textContent=st.mode==='dnd'?'Not for this notice':B6[st.gal];
+ $('o-b8').textContent=st.mode==='dnd'?'Not for this notice':B8[st.gal];
+ var shop='';
+ if(short>0)shop+=amz('bottled water case 24 pack','Bottled water cases');
+ shop+=amz('7 gallon water storage container BPA free','Water storage jugs (fill before the next one)',short>0?'alt':'');
+ if(st.mode==='none')shop+=amz('bathtub water storage bladder 100 gallon','Bathtub water storage bladders','alt');
+ else if(st.mode==='boil')shop+=amz('8 quart stock pot with lid','8-quart stockpots','alt');
+ shop+=amz('portable power station 1000Wh','Power stations (boil or pump when the power is out too)','alt');
+ $('o-shop').innerHTML=shop;
+}
+function bind(id,key){var g=$(id);
+ g.addEventListener('click',function(e){var btn=e.target.closest('button');if(!btn)return;var v=btn.getAttribute('data-v');
+  st[key]=isNaN(+v)?v:+v;mark(id,key);var c=$('c-'+key);if(c)c.classList.toggle('on',v==='custom');calc()});
+ mark(id,key)}
+function mark(id,key){[].forEach.call($(id).querySelectorAll('button'),function(x){x.setAttribute('aria-pressed',String(x.getAttribute('data-v'))===String(st[key])?'true':'false')})}
+bind('g-mode','mode');bind('g-ppl','ppl');bind('g-pet','pet');bind('g-days','days');bind('g-have','have');bind('g-hot','hot');bind('g-gal','gal');
+$('i-ppl').addEventListener('input',calc);$('i-have').addEventListener('input',calc);
+document.addEventListener('click',function(e){var a=e.target.closest('a[data-out]');if(!a)return;try{var n=+(localStorage.getItem('bank-out-clicks')||0)+1;localStorage.setItem('bank-out-clicks',n)}catch(_){};if(window.va)window.va('event',{name:'outbound',data:{dest:a.getAttribute('data-out'),page:'water-outage-boil-notice-planner'}})});
+calc();
+})();
+</script>
+<script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+<script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>
