@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Power Out: Use Your Car as a Generator? Hours per Tank + What It Can Run</title>
+<meta name="description" content="Lost power? Tap your vehicle, inverter and what you need to run (fridge, furnace blower, router, CPAP). Get hours per tank of gas, gas per day, and whether your inverter and alternator can keep up.">
+<link rel="canonical" href="https://live-city-life-anywhere.vercel.app/power/car-generator-outage-runtime/">
+<script type="application/ld+json">
+[{"@context":"https://schema.org","@type":"WebApplication","name":"Car as Outage Generator Calculator","url":"https://live-city-life-anywhere.vercel.app/power/car-generator-outage-runtime/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hub","item":"https://live-city-life-anywhere.vercel.app/"},{"@type":"ListItem","position":2,"name":"Power","item":"https://live-city-life-anywhere.vercel.app/power/"},{"@type":"ListItem","position":3,"name":"Car as Outage Generator"}]}]
+</script>
+<meta property="og:title" content="Power Out: Use Your Car as a Generator? Hours per Tank + What It Can Run">
+<meta property="og:description" content="Lost power? Tap your vehicle, inverter and what you need to run (fridge, furnace blower, router, CPAP). Get hours per tank of gas, gas per day, and whether your inverter and alternator can keep up.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://live-city-life-anywhere.vercel.app/power/car-generator-outage-runtime/">
+<meta name="theme-color" content="#2c4bb5">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/styles.css">
+<style>
+.fo{max-width:760px;margin:0 auto;padding:14px 18px 8px}
+.fo h1{font-size:clamp(1.5rem,5vw,2.2rem);margin:.25em 0 .2em}
+.fo .blunt{margin:0 0 12px;color:var(--muted)}
+.fo .card{background:#fff;border:1px solid var(--stone);border-radius:16px;padding:14px;margin:0 0 12px;box-shadow:0 8px 24px -18px rgba(30,53,127,.5)}
+.fo .step{font-weight:700;margin:0 0 8px;font-size:.98rem}
+.fo .step span{display:inline-block;width:26px;height:26px;border-radius:50%;background:var(--horizon);color:#fff;text-align:center;line-height:26px;margin-right:6px;font-size:.85rem}
+.fo .seg{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+@media(min-width:560px){.fo .seg.s4{grid-template-columns:repeat(4,1fr)}.fo .seg.s3{grid-template-columns:repeat(3,1fr)}}
+.fo .seg button{min-height:58px;border:2px solid var(--stone);background:var(--stone-2);border-radius:12px;font:inherit;font-weight:700;color:var(--ink);cursor:pointer;padding:6px 8px;line-height:1.2}
+.fo .seg button small{display:block;font-weight:500;font-size:.78rem;color:var(--muted)}
+.fo .seg button[aria-pressed=true]{border-color:var(--horizon);background:#e6ecfb;box-shadow:inset 0 0 0 1px var(--horizon)}
+.fo .custom{margin-top:8px;display:none}.fo .custom.on{display:block}
+.fo .custom input{width:100%;min-height:48px;font:inherit;padding:8px 12px;border:2px solid var(--stone);border-radius:10px;box-sizing:border-box}
+.fo .out{background:var(--ink);color:#fff;border-radius:16px;padding:16px;margin:0 0 12px}
+.fo .big{font-family:var(--display);font-size:clamp(2.2rem,9vw,3.4rem);font-weight:700;line-height:1}
+.fo .big small{font-size:.4em;font-weight:600;opacity:.85}
+.fo .verdict{margin:.5em 0 .7em;font-weight:700}
+.fo .verdict.bad{color:#ffb4a9}.fo .verdict.ok{color:#9fe3c0}.fo .verdict.warn{color:#ffd88a}
+.fo .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.fo .stats div{background:rgba(255,255,255,.08);border-radius:10px;padding:8px 10px;font-size:.85rem}
+.fo .stats b{display:block;font-family:var(--mono);font-size:1.15rem}
+.fo .shop{display:grid;gap:8px;margin-top:12px}
+.fo .shop a{display:flex;align-items:center;justify-content:center;min-height:52px;border-radius:999px;background:var(--sun);color:#3b2600;font-weight:800;text-decoration:none;text-align:center;padding:8px 14px}
+.fo .shop a.alt{background:#fff;color:var(--horizon-deep)}
+.fo .fine{font-size:.82rem;opacity:.85;margin:.6em 0 0}
+.fo .xl{display:grid;gap:8px}@media(min-width:560px){.fo .xl{grid-template-columns:repeat(3,1fr)}}
+.fo .xl a{display:block;background:#fff;border:1px solid var(--stone);border-left:6px solid var(--horizon);border-radius:12px;padding:10px 12px;text-decoration:none;color:var(--ink);font-weight:700}
+.fo .xl a span{display:block;font-weight:500;font-size:.85rem;color:var(--muted)}
+.fo ul.facts{padding-left:1.1em;margin:.3em 0}.fo ul.facts li{margin:.25em 0}
+
+.fo .seg.s5 button{min-height:58px}
+@media(min-width:560px){.fo .seg.s5{grid-template-columns:repeat(5,1fr)}}
+.fo .note{font-size:.86rem;color:var(--muted);margin:8px 0 0}
+.fo .med{border-left:6px solid var(--bad)}
+.fo .tg{display:grid;grid-template-columns:1fr 1fr;gap:8px}@media(min-width:560px){.fo .tg{grid-template-columns:repeat(4,1fr)}}
+.fo .s6{grid-template-columns:repeat(2,1fr)}@media(min-width:560px){.fo .seg.s6{grid-template-columns:repeat(3,1fr)}}
+.fo .co{border-left:6px solid var(--bad);background:#fff4f2}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="wrap bar">
+<a class="brand" href="/"><span class="sunmark" aria-hidden="true"></span><span>Live City Life, <em>Anywhere</em></span></a>
+<nav class="nav" aria-label="Main"><a href="/power/" aria-current="page">Power</a><a href="/water/">Water</a><a href="/heat-air/">Heat &amp; Air</a><a href="/safety/">Safety</a><a href="/about.html">About</a></nav>
+</div></header>
+<div class="disclose"><div class="wrap"><p><strong>Disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. Amazon links are marked; we never show prices or ratings because they change. <a href="/about.html#disclosure">Full disclosure</a></p></div></div>
+<main id="main">
+<div class="fo">
+<p class="crumbs"><a href="/">Hub</a> › <a href="/power/">Power</a> › Car as outage generator</p>
+<h1>No power. No generator. You have a car.</h1>
+<p class="blunt">Tap your vehicle, inverter and what must run. Get hours per tank and whether it can keep up.</p>
+
+<div class="card"><p class="step"><span>1</span>What are you driving?</p>
+<div class="seg s5" id="g-veh">
+<button type="button" data-v="compact">Small car<small>~2.0 L 4-cyl</small></button>
+<button type="button" data-v="mid">SUV / minivan<small>~3.5 L V6</small></button>
+<button type="button" data-v="truck">Truck / big V8<small>5 L+</small></button>
+<button type="button" data-v="hybrid">Hybrid<small>Prius-type</small></button>
+<button type="button" data-v="ev">EV / plug-in<small>with an outlet</small></button>
+</div>
+<div class="custom on" id="c-gal"><label for="i-gal" id="l-gal">Gas in the tank (gallons)</label><input id="i-gal" type="number" inputmode="decimal" min="0.5" max="40" step="0.5" value="8"></div>
+<div class="custom" id="c-kwh"><label for="i-kwh">Battery you're willing to spend (kWh, keep some to drive)</label><input id="i-kwh" type="number" inputmode="decimal" min="1" max="200" step="1" value="30"></div>
+</div>
+
+<div class="card"><p class="step"><span>2</span>What must run? <small style="font-weight:500">(tap all that apply)</small></p>
+<div class="seg tg" id="g-dev">
+<button type="button" data-k="fridge" aria-pressed="true">Fridge<small>~150 W, starts ~1,200</small></button>
+<button type="button" data-k="freezer" aria-pressed="false">Freezer<small>~100 W, starts ~800</small></button>
+<button type="button" data-k="furnace" aria-pressed="false">Gas furnace blower<small>~500 W, starts ~1,200</small></button>
+<button type="button" data-k="net" aria-pressed="true">Modem + router<small>~15 W</small></button>
+<button type="button" data-k="phone" aria-pressed="true">Phones + LED lights<small>~25 W</small></button>
+<button type="button" data-k="cpap" aria-pressed="false">CPAP<small>~40 W, no humidifier</small></button>
+<button type="button" data-k="sump" aria-pressed="false">Sump pump<small>~800 W, starts ~2,000</small></button>
+<button type="button" data-k="tv" aria-pressed="false">TV or laptop<small>~60 W</small></button>
+</div>
+<div class="custom on"><label for="i-extra">Anything else (running watts)</label><input id="i-extra" type="number" inputmode="numeric" min="0" max="5000" step="1" value="0"></div>
+</div>
+
+<div class="card"><p class="step"><span>3</span>What connects it?</p>
+<div class="seg s5" id="g-inv">
+<button type="button" data-v="150">12 V plug inverter<small>~150 W max</small></button>
+<button type="button" data-v="400">400 W inverter<small>clamped to battery</small></button>
+<button type="button" data-v="1000">1,000 W inverter<small>clamped to battery</small></button>
+<button type="button" data-v="2000">2,000 W inverter<small>clamped to battery</small></button>
+<button type="button" data-v="builtin">Built-in outlet<small>truck / hybrid / EV</small></button>
+</div>
+<div class="custom" id="c-bi"><label for="i-bi">Built-in outlet rating (watts, in your owner's manual)</label><input id="i-bi" type="number" inputmode="numeric" min="100" max="10000" step="50" value="1500"></div>
+</div>
+
+<div class="out" aria-live="polite" id="out">
+<div class="big" id="o-big">—</div>
+<p class="verdict" id="o-verdict"></p>
+<div class="stats">
+<div>Average load<b id="o-w">—</b></div>
+<div>Startup surge<b id="o-surge">—</b></div>
+<div id="d-rate">Fuel per day<b id="o-day">—</b></div>
+<div>Car can supply (idle)<b id="o-alt">—</b></div>
+</div>
+<p class="verdict warn" id="o-extra" style="display:none"></p>
+<div class="shop" id="o-shop"></div>
+<p class="fine">Math: hours = gallons ÷ (idle burn + electric load burn). Idle burn with no load: 0.17 gal/h for a 2.0 L car (Argonne National Laboratory, via Oak Ridge's Fact of the Week #861); a 4.6 L sedan burns just over twice that. Our V6, V8 and hybrid rates are estimates. Electric load burn: every 1,000 W of average load adds about 0.2 gal/h (we assume ~15% of gas energy reaches your outlet at idle). Average load counts fridges, freezers, furnace blowers and sump pumps as running part of the time (our duty-cycle estimates). EV: hours = kWh × 0.9 ÷ load. Planning numbers, not tests of any vehicle.</p>
+</div>
+
+<div class="card co"><p class="step" style="margin-bottom:4px">Car exhaust kills. Read this first.</p>
+<ul class="facts">
+<li><strong>Never run the car in a garage, even with the door open.</strong> Park outside, tailpipe pointed away from the house, well away from doors, windows and vents.</li>
+<li><strong>Put a battery CO alarm inside</strong> near sleeping areas. Headache, dizziness or nausea: get everyone outside into fresh air and call 911.</li>
+<li><strong>Clear snow from the tailpipe</strong> before and during every run. A blocked pipe pushes exhaust into the cabin.</li>
+<li><strong>Never backfeed a wall outlet.</strong> A hardwired furnace needs an electrician-installed inlet or transfer switch.</li>
+</ul></div>
+
+<div class="card med"><p class="step" style="margin-bottom:4px">Make it work</p>
+<ul class="facts">
+<li><strong>The 12 V plug tops out around 150 W.</strong> Phones, router, lights. A fridge needs a 1,000 W+ inverter clamped to the battery with the short, thick cables it ships with.</li>
+<li><strong>Buy pure sine wave</strong> for fridges, furnace blowers and CPAPs. Modified sine can make motors buzz and run hot.</li>
+<li><strong>Keep the engine running</strong> under any real load. An inverter can flatten a starting battery in under an hour.</li>
+<li><strong>Stagger starts.</strong> Let the fridge kick on before the furnace blower. Surges stack. We assume an inverter handles about 2× its rating for a few seconds; check yours.</li>
+<li><strong>Cycle it.</strong> A closed fridge holds about 4 hours. Run it a few hours, rest a few, and stretch the tank.</li>
+<li><strong>Better: charge a power station</strong> from the car a few hours a day, then run the house quietly from the station.</li>
+</ul></div>
+
+<div class="xl">
+<a href="/power/generator-fuel-runtime/">Power: generator fuel runtime<span>Gas or propane per day on a real generator</span></a>
+<a href="/heat-air/furnace-outage-runtime/">Heat: furnace outage runtime<span>Keep the gas furnace blower running</span></a>
+<a href="/safety/smoke-co-alarm-planner/">Safety: smoke &amp; CO alarm planner<span>Where CO alarms go, when to replace</span></a>
+<a href="/safety/fridge-freezer-outage-food-clock/">Safety: fridge food clock<span>What to keep, what to toss</span></a>
+<a href="/water/sump-pump-backup-runtime/">Water: sump pump backup<span>Hours of pumping on a battery</span></a>
+<a href="/power/wifi-desk-outage-backup/">Power: Wi-Fi &amp; desk backup<span>UPS size for modem and laptop</span></a>
+</div>
+<p class="fine" style="color:var(--muted)">Appliance watts, startup surges and duty cycles are our estimates; check the nameplate or use a plug-in watt meter. "Car can supply" is our estimate of spare alternator output at idle (small car ~500 W, SUV ~700 W, truck ~900 W, hybrid ~1,000 W from its 12 V system). Real alternators vary a lot; check your manual. Consumer Reports, in a real outage test, ran a fridge and more through a car inverter and saw about 1/3 gallon per hour at idle. Planning information only.</p>
+</div>
+</main>
+<footer class="foot">
+<div class="wrap grid buckets-foot">
+<div><b>Live City Life, Anywhere</b>
+<p>Guides and free planners for keeping water, lights, heat and a cold fridge when you live off the municipal grid or ride out outages.</p>
+<p><strong>Planning information only.</strong> This is not professional electrical, plumbing or well-system advice. Check nameplates and manufacturer charts, and use a licensed electrician or well contractor for anything wired or plumbed into your home.</p></div>
+<div><b>Power</b><ul>
+<li><a href="https://wellpump-generator-planner.vercel.app/">Well Pump Generator Planner</a></li>
+<li><a href="/power/cpap-oxygen-outage-runtime/">CPAP &amp; Oxygen Outage Runtime</a></li>
+<li><a href="/power/generator-fuel-runtime/">Generator Fuel Runtime</a></li>
+<li><a href="/power/wifi-desk-outage-backup/">Wi-Fi &amp; Desk Outage Backup</a></li>
+<li><a href="/power/car-generator-outage-runtime/">Car as Outage Generator</a></li>
+<li><a href="/guides/backup-power.html">Backup power guide</a></li>
+<li><a href="/power/">All Power tools &amp; guides</a></li></ul></div>
+<div><b>Water</b><ul>
+<li><a href="https://well-pressure-tank-sizer.vercel.app/">Well Pressure Tank Sizer</a></li>
+<li><a href="/water/sump-pump-backup-runtime/">Sump Pump Backup Runtime</a></li>
+<li><a href="/water/water-outage-boil-notice-planner/">Water Outage &amp; Boil Notice Planner</a></li>
+<li><a href="/guides/well-water.html">Well water guide</a></li>
+<li><a href="/water/">All Water tools &amp; guides</a></li></ul></div>
+<div><b>Heat &amp; Air</b><ul>
+<li><a href="https://space-heater-planner.vercel.app/">Space Heater Planner</a></li>
+<li><a href="/tools/snowblower-size-picker.html">Snowblower Size Picker</a></li>
+<li><a href="/guides/heat-without-the-grid.html">Heat without the grid</a></li>
+<li><a href="/heat-air/">All Heat &amp; Air</a></li></ul></div>
+<div><b>Safety</b><ul>
+<li><a href="/safety/smoke-co-alarm-planner/">Smoke &amp; CO Alarm Planner</a></li>
+<li><a href="/safety/fridge-freezer-outage-food-clock/">Fridge &amp; Freezer Outage Food Clock</a></li>
+<li><a href="/guides/winter-prep.html">Winter prep checklist</a></li>
+<li><a href="/safety/">All Safety tools &amp; guides</a></li>
+<li><a href="/about.html">About &amp; disclosure</a></li></ul></div>
+</div>
+<div class="wrap legal">As an Amazon Associate I earn from qualifying purchases (tag wellpumpplann-20). Brand names mentioned without an Amazon link are not affiliate links. © 2026 Live City Life, Anywhere.</div>
+</footer>
+<script src="/assets/hub.js" defer></script>
+<script>
+(function(){'use strict';
+var TAG='wellpumpplann-20';
+var DEV={fridge:{w:150,s:1200,d:0.4},freezer:{w:100,s:800,d:0.4},furnace:{w:500,s:1200,d:0.5},net:{w:15,s:15,d:1},phone:{w:25,s:25,d:1},cpap:{w:40,s:40,d:1},sump:{w:800,s:2000,d:0.2},tv:{w:60,s:60,d:1}};
+var VEH={compact:{idle:0.17,alt:500,n:'small car'},mid:{idle:0.3,alt:700,n:'SUV'},truck:{idle:0.4,alt:900,n:'truck'},hybrid:{idle:0.1,alt:1000,n:'hybrid'},ev:{idle:0,alt:0,n:'EV'}};
+var st={on:{fridge:1,net:1,phone:1},veh:'compact',inv:'1000'};
+function $(i){return document.getElementById(i)}
+function f(n){return Math.round(n).toLocaleString('en-US')}
+function d1(n){return n>=10?f(n):(Math.round(n*10)/10).toString()}
+function dur(h){return h>=48?d1(h/24)+' <small>days</small>':h>=1?d1(h)+' <small>hours</small>':f(h*60)+' <small>minutes</small>'}
+function amz(q,txt,cls){return '<a class="'+(cls||'')+'" rel="sponsored nofollow noopener" target="_blank" data-out="amazon" href="https://www.amazon.com/s?k='+encodeURIComponent(q)+'&tag='+TAG+'">'+txt+' <span style="font-weight:500">(Amazon)</span></a>'}
+function calc(){
+ var extra=Math.max(0,parseFloat($('i-extra').value)||0),run=extra,avg=extra,big=0,k,dv;
+ for(k in st.on)if(st.on[k]){dv=DEV[k];run+=dv.w;avg+=dv.w*dv.d;if(dv.s-dv.w>big)big=dv.s-dv.w}
+ var surge=run+big, v=VEH[st.veh], ev=st.veh==='ev';
+ var inv=st.inv==='builtin'?(parseFloat($('i-bi').value)||0):+st.inv;
+ var x=$('o-extra');x.style.display='none';
+ if(!(run>0)){$('o-big').textContent='Tap at least one thing to run';$('o-verdict').textContent='';$('o-shop').innerHTML='';['o-w','o-surge','o-day','o-alt'].forEach(function(i){$(i).textContent='—'});return}
+ var hrs,perDay;
+ if(ev){var kwh=Math.max(0,parseFloat($('i-kwh').value)||0);hrs=kwh*1000*0.9/avg;perDay=avg*24/900;$('d-rate').firstChild.nodeValue='Battery per day';$('o-day').textContent=d1(perDay)+' kWh';$('o-alt').textContent=inv?f(inv)+' W outlet':'—'}
+ else{var gal=Math.max(0,parseFloat($('i-gal').value)||0);var gph=v.idle+avg/1000*0.2;hrs=gal/gph;$('d-rate').firstChild.nodeValue='Gas per day (24 h)';$('o-day').textContent=d1(gph*24)+' gal';$('o-alt').textContent='~'+f(v.alt)+' W'}
+ $('o-big').innerHTML=dur(hrs)+' <small>'+(ev?'on that battery':'on '+($('i-gal').value||0)+' gal, nonstop')+'</small>';
+ $('o-w').textContent=f(avg)+' W';
+ $('o-surge').textContent=f(surge)+' W';
+ var vd=$('o-verdict'),bi=st.inv==='builtin',pk=bi?inv:inv*2,need=Math.max(1000,Math.ceil(Math.max(run*1.25,surge/2)/500)*500);
+ if(inv&&(run>inv||surge>pk)){vd.className='verdict bad';vd.textContent='Too much for that '+(bi?'outlet':'inverter')+': '+(run>inv?'~'+f(run)+' W running vs '+f(inv)+' W.':'startup surge ~'+f(surge)+' W vs ~'+f(pk)+' W peak.')+' It will trip. Drop a load'+(bi?'.':' or get a '+f(need)+' W+ pure sine inverter.')}
+ else if(!ev&&avg>v.alt){vd.className='verdict bad';vd.textContent='Too much for the alternator at idle: ~'+f(avg)+' W average vs ~'+f(v.alt)+' W. The car battery will drain. Cut loads or run them in turns.'}
+ else if(!ev&&run>v.alt){vd.className='verdict warn';vd.textContent='Works on average, but when everything runs at once (~'+f(run)+' W) the car battery covers the gap. Stagger loads.'}
+ else{vd.className='verdict ok';vd.textContent='Doable. '+(ev?'Keep enough charge to drive out.':'About '+d1(v.idle+avg/1000*0.2)+' gal per hour. Refill before the tank hits a quarter.')}
+ if(st.on.sump){x.style.display='block';x.textContent='Sump pumps start hard. Many 1,000 W inverters can\u2019t start one. Use a battery backup pump or a generator for flood risk.'}
+ else if(st.on.furnace){x.style.display='block';x.textContent='A hardwired furnace needs an electrician-installed inlet or transfer switch. Never a cord into a wall outlet.'}
+ var shop='';
+ if(!(st.veh==='ev'||st.inv==='builtin')){var sz=Math.max(run*1.25,surge/2)<=1000?1000:Math.max(run*1.25,surge/2)<=2000?2000:3000;shop+=amz(sz+'W pure sine wave inverter 12V battery clamps',sz.toLocaleString('en-US')+' W pure sine inverter for your car')}
+ shop+=amz('battery operated carbon monoxide alarm','Battery CO alarm (inside the house)','alt');
+ shop+=amz('portable power station LiFePO4 car charging 1000Wh','Power station you can charge from the car','alt');
+ shop+=amz('outdoor extension cord 12 gauge 50 ft','12-gauge outdoor extension cord','alt');
+ $('o-shop').innerHTML=shop;
+}
+$('g-dev').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;var k=b.getAttribute('data-k');st.on[k]=st.on[k]?0:1;b.setAttribute('aria-pressed',st.on[k]?'true':'false');calc()});
+function mark(id,key){[].forEach.call($(id).querySelectorAll('button'),function(x){x.setAttribute('aria-pressed',String(x.getAttribute('data-v'))===String(st[key])?'true':'false')})}
+function bind(id,key,after){var el=$(id);el.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;st[key]=b.getAttribute('data-v');mark(id,key);if(after)after();calc()});mark(id,key)}
+function vehUI(){var ev=st.veh==='ev';$('c-gal').classList.toggle('on',!ev);$('c-kwh').classList.toggle('on',ev);if(ev&&st.inv!=='builtin'){st.inv='builtin';mark('g-inv','inv');invUI()}}
+function invUI(){$('c-bi').classList.toggle('on',st.inv==='builtin')}
+bind('g-veh','veh',vehUI);bind('g-inv','inv',invUI);
+['i-extra','i-gal','i-kwh','i-bi'].forEach(function(i){$(i).addEventListener('input',calc)});
+document.addEventListener('click',function(e){var a=e.target.closest('a[data-out]');if(!a)return;try{var n=+(localStorage.getItem('bank-out-clicks')||0)+1;localStorage.setItem('bank-out-clicks',n)}catch(_){};if(window.va)window.va('event',{name:'outbound',data:{dest:a.getAttribute('data-out'),page:+SLUG+r}})});
+calc();
+})();
+</script>
+<script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+<script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>
