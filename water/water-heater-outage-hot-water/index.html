@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Power Out: Will My Water Heater Still Work? Hot Showers Left + Backup Size</title>
+<meta name="description" content="Lost power? Tap your water heater type, tank size and household. See if it still heats, how many hot showers are left in the tank, and what battery or UPS keeps a gas power-vent or tankless heater running.">
+<link rel="canonical" href="https://live-city-life-anywhere.vercel.app/water/water-heater-outage-hot-water/">
+<script type="application/ld+json">
+[{"@context":"https://schema.org","@type":"WebApplication","name":"Water Heater Outage Calculator","url":"https://live-city-life-anywhere.vercel.app/water/water-heater-outage-hot-water/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hub","item":"https://live-city-life-anywhere.vercel.app/"},{"@type":"ListItem","position":2,"name":"Water","item":"https://live-city-life-anywhere.vercel.app/water/"},{"@type":"ListItem","position":3,"name":"Water Heater in an Outage"}]}]
+</script>
+<meta property="og:title" content="Power Out: Will My Water Heater Still Work? Hot Showers Left + Backup Size">
+<meta property="og:description" content="Lost power? Tap your water heater type, tank size and household. See if it still heats, how many hot showers are left in the tank, and what battery or UPS keeps a gas power-vent or tankless heater running.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://live-city-life-anywhere.vercel.app/water/water-heater-outage-hot-water/">
+<meta name="theme-color" content="#2c4bb5">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/styles.css">
+<style>
+.fo{max-width:760px;margin:0 auto;padding:14px 18px 8px}
+.fo h1{font-size:clamp(1.5rem,5vw,2.2rem);margin:.25em 0 .2em}
+.fo .blunt{margin:0 0 12px;color:var(--muted)}
+.fo .card{background:#fff;border:1px solid var(--stone);border-radius:16px;padding:14px;margin:0 0 12px;box-shadow:0 8px 24px -18px rgba(30,53,127,.5)}
+.fo .step{font-weight:700;margin:0 0 8px;font-size:.98rem}
+.fo .step span{display:inline-block;width:26px;height:26px;border-radius:50%;background:var(--horizon);color:#fff;text-align:center;line-height:26px;margin-right:6px;font-size:.85rem}
+.fo .seg{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+@media(min-width:560px){.fo .seg.s4{grid-template-columns:repeat(4,1fr)}.fo .seg.s3{grid-template-columns:repeat(3,1fr)}}
+.fo .seg button{min-height:58px;border:2px solid var(--stone);background:var(--stone-2);border-radius:12px;font:inherit;font-weight:700;color:var(--ink);cursor:pointer;padding:6px 8px;line-height:1.2}
+.fo .seg button small{display:block;font-weight:500;font-size:.78rem;color:var(--muted)}
+.fo .seg button[aria-pressed=true]{border-color:var(--horizon);background:#e6ecfb;box-shadow:inset 0 0 0 1px var(--horizon)}
+.fo .custom{margin-top:8px;display:none}.fo .custom.on{display:block}
+.fo .custom input{width:100%;min-height:48px;font:inherit;padding:8px 12px;border:2px solid var(--stone);border-radius:10px;box-sizing:border-box}
+.fo .out{background:var(--ink);color:#fff;border-radius:16px;padding:16px;margin:0 0 12px}
+.fo .big{font-family:var(--display);font-size:clamp(2.2rem,9vw,3.4rem);font-weight:700;line-height:1}
+.fo .big small{font-size:.4em;font-weight:600;opacity:.85}
+.fo .verdict{margin:.5em 0 .7em;font-weight:700}
+.fo .verdict.bad{color:#ffb4a9}.fo .verdict.ok{color:#9fe3c0}.fo .verdict.warn{color:#ffd88a}
+.fo .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.fo .stats div{background:rgba(255,255,255,.08);border-radius:10px;padding:8px 10px;font-size:.85rem}
+.fo .stats b{display:block;font-family:var(--mono);font-size:1.15rem}
+.fo .shop{display:grid;gap:8px;margin-top:12px}
+.fo .shop a{display:flex;align-items:center;justify-content:center;min-height:52px;border-radius:999px;background:var(--sun);color:#3b2600;font-weight:800;text-decoration:none;text-align:center;padding:8px 14px}
+.fo .shop a.alt{background:#fff;color:var(--horizon-deep)}
+.fo .fine{font-size:.82rem;opacity:.85;margin:.6em 0 0}
+.fo .xl{display:grid;gap:8px}@media(min-width:560px){.fo .xl{grid-template-columns:repeat(3,1fr)}}
+.fo .xl a{display:block;background:#fff;border:1px solid var(--stone);border-left:6px solid var(--horizon);border-radius:12px;padding:10px 12px;text-decoration:none;color:var(--ink);font-weight:700}
+.fo .xl a span{display:block;font-weight:500;font-size:.85rem;color:var(--muted)}
+.fo ul.facts{padding-left:1.1em;margin:.3em 0}.fo ul.facts li{margin:.25em 0}
+
+.fo .seg.s5 button{min-height:58px}
+@media(min-width:560px){.fo .seg.s5{grid-template-columns:repeat(5,1fr)}}
+.fo .note{font-size:.86rem;color:var(--muted);margin:8px 0 0}
+.fo .med{border-left:6px solid var(--bad)}
+.fo .tg{display:grid;grid-template-columns:1fr 1fr;gap:8px}@media(min-width:560px){.fo .tg{grid-template-columns:repeat(4,1fr)}}
+.fo .s6{grid-template-columns:repeat(2,1fr)}@media(min-width:560px){.fo .seg.s6{grid-template-columns:repeat(3,1fr)}}
+.fo .co{border-left:6px solid var(--bad);background:#fff4f2}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="wrap bar">
+<a class="brand" href="/"><span class="sunmark" aria-hidden="true"></span><span>Live City Life, <em>Anywhere</em></span></a>
+<nav class="nav" aria-label="Main"><a href="/power/">Power</a><a href="/water/" aria-current="page">Water</a><a href="/heat-air/">Heat &amp; Air</a><a href="/safety/">Safety</a><a href="/about.html">About</a></nav>
+</div></header>
+<div class="disclose"><div class="wrap"><p><strong>Disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. Amazon links are marked; we never show prices or ratings because they change. <a href="/about.html#disclosure">Full disclosure</a></p></div></div>
+<main id="main">
+<div class="fo">
+<p class="crumbs"><a href="/">Hub</a> › <a href="/water/">Water</a> › Water heater in an outage</p>
+<h1>Power's out. Is there still hot water?</h1>
+<p class="blunt">Tap your heater type, tank and household. See if it still heats, how many hot showers are left, and what keeps it running.</p>
+
+<div class="card"><p class="step"><span>1</span>What kind of water heater?</p>
+<div class="seg s5" id="g-type">
+<button type="button" data-v="pilot">Gas tank, no plug<small>pilot flame, metal flue</small></button>
+<button type="button" data-v="pv">Gas tank with a plug<small>power vent / fan on top</small></button>
+<button type="button" data-v="tankless">Gas tankless<small>wall unit, plugs in</small></button>
+<button type="button" data-v="elec">Electric tank<small>240 V, no gas</small></button>
+<button type="button" data-v="hp">Heat pump tank<small>hybrid electric</small></button>
+</div>
+<p class="note">Not sure? A cord to an outlet or a fan on top means it needs power. No cord and a metal pipe up a chimney means it doesn't.</p>
+</div>
+
+<div class="card" id="c-tank"><p class="step"><span>2</span>Tank size</p>
+<div class="seg s5" id="g-tank">
+<button type="button" data-v="30">30 gal</button>
+<button type="button" data-v="40">40 gal</button>
+<button type="button" data-v="50">50 gal</button>
+<button type="button" data-v="75">75 gal</button>
+<button type="button" data-v="80">80 gal</button>
+</div>
+</div>
+
+<div class="card"><p class="step"><span>3</span>Who needs hot water each day?</p>
+<div class="seg s5" id="g-ppl">
+<button type="button" data-v="1">1 person</button>
+<button type="button" data-v="2">2 people</button>
+<button type="button" data-v="3">3 people</button>
+<button type="button" data-v="4">4 people</button>
+<button type="button" data-v="6">5–6 people</button>
+</div>
+<div class="seg s3" id="g-flow" style="margin-top:8px">
+<button type="button" data-v="1.8">Low-flow head<small>1.8 gal/min</small></button>
+<button type="button" data-v="2.5">Standard head<small>2.5 gal/min</small></button>
+<button type="button" data-v="0">Skip showers<small>sinks only</small></button>
+</div>
+<div class="custom on" id="c-min"><label for="i-min">Minutes per shower</label><input id="i-min" type="number" inputmode="numeric" min="1" max="30" step="1" value="8"></div>
+</div>
+
+<div class="card" id="c-bat"><p class="step"><span>4</span>Backup battery to plug it into</p>
+<div class="seg s5" id="g-bat">
+<button type="button" data-v="0">None</button>
+<button type="button" data-v="200">1500 VA UPS<small>~200 Wh battery</small></button>
+<button type="button" data-v="1000">Power station<small>~1,000 Wh</small></button>
+<button type="button" data-v="2000">Power station<small>~2,000 Wh</small></button>
+<button type="button" data-v="custom">Other<small>enter Wh</small></button>
+</div>
+<div class="custom" id="c-wh"><label for="i-wh">Battery capacity (Wh, on the label)</label><input id="i-wh" type="number" inputmode="numeric" min="50" max="30000" step="50" value="3000"></div>
+<div class="custom on" id="c-amp"><label for="i-amp">Amps on the heater's label (rating plate)</label><input id="i-amp" type="number" inputmode="decimal" min="0.5" max="15" step="0.5" value="5"></div>
+<div class="seg s3" id="g-frz" style="margin-top:8px;display:none">
+<button type="button" data-v="0">Indoor unit<small>or above freezing</small></button>
+<button type="button" data-v="1">Outdoor unit<small>below freezing</small></button>
+</div>
+</div>
+
+<div class="out" aria-live="polite" id="out">
+<div class="big" id="o-big">—</div>
+<p class="verdict" id="o-verdict"></p>
+<div class="stats">
+<div>Hot water left in tank<b id="o-left">—</b></div>
+<div>Hot water used per day<b id="o-day">—</b></div>
+<div>Battery used per day<b id="o-wh">—</b></div>
+<div>Backup must supply<b id="o-inv">—</b></div>
+</div>
+<p class="verdict warn" id="o-extra" style="display:none"></p>
+<div class="shop" id="o-shop"></div>
+<p class="fine">Math (estimates): a shower uses flow × minutes, and about 78% of that is tank water at 120°F mixed down to 105°F with 50°F winter supply water. About 70% of a tank comes out hot before it runs lukewarm (plumber rule of thumb). Plus 2 gal of hot water per person per day for sinks. Gas tank with a plug: the blower runs only while the burner fires; we use ~200 W while firing (a common replacement blower is rated 1.8 A at 115 V) plus ~5 W standby, and a 40,000 BTU/h burner at 80%. Gas tankless: ~100 W while water flows plus ~5 W standby; outdoor freeze protection adds ~100 W for 12 cold hours a day. Battery: 85% of rated Wh reaches the outlet. Planning numbers, not tests of any heater.</p>
+</div>
+
+<div class="card co"><p class="step" style="margin-bottom:4px">Read before you plug anything in</p>
+<ul class="facts">
+<li><strong>Hardwired heater? Don't improvise a cord.</strong> Only heaters that already plug into an outlet can go on a UPS or power station. Anything else needs an electrician.</li>
+<li><strong>Electric tank: shut the breaker off if the tank might get drained.</strong> Power back on with an empty tank burns out the elements.</li>
+<li><strong>Outdoor tankless in a freeze with no power:</strong> most makers say drain it. Check your manual before the storm.</li>
+<li><strong>Any gas appliance: keep a battery CO alarm working.</strong> Headache, dizziness or nausea: get out and call 911.</li>
+</ul></div>
+
+<div class="card med"><p class="step" style="margin-bottom:4px">Stretch the hot water</p>
+<ul class="facts">
+<li><strong>Use the hot water early.</strong> A full tank cools slowly, but it never reheats while the power is out (unless it's a pilot-flame gas tank).</li>
+<li><strong>Short showers, low-flow head.</strong> Every minute you cut is about 1.5–2 gal of hot water saved.</li>
+<li><strong>Your tank is also stored drinking water</strong> if the taps stop. Shut the cold inlet valve first so it stays clean.</li>
+<li><strong>Power vent: buy pure sine.</strong> A cheap modified-sine UPS may not light the burner. Test it before an outage.</li>
+</ul></div>
+
+<div class="xl">
+<a href="/water/water-outage-boil-notice-planner/">Water: outage &amp; boil notice<span>Gallons to store, what's safe to use</span></a>
+<a href="/water/sump-pump-backup-runtime/">Water: sump pump backup<span>Hours of pumping on a battery</span></a>
+<a href="/heat-air/furnace-outage-runtime/">Heat: furnace outage runtime<span>Keep the gas furnace blower running</span></a>
+<a href="/power/generator-fuel-runtime/">Power: generator fuel runtime<span>Gas or propane per day</span></a>
+<a href="/power/car-generator-outage-runtime/">Power: car as generator<span>What a car + inverter can run</span></a>
+<a href="/safety/smoke-co-alarm-planner/">Safety: smoke &amp; CO alarms<span>Where CO alarms go</span></a>
+</div>
+<p class="fine" style="color:var(--muted)">Rheem and A.O. Smith list residential power-vent tanks at up to about 5 A at 120 V; that's the maximum, so we size the backup to your label amps × 120 V. Gas tankless units list their own amps on the rating plate. Electric tanks usually use 4,500 W elements on 240 V: a power station can't run one, and a generator needs a 240 V outlet plus an electrician-installed transfer switch or interlock. Watts while running are not published by most makers; measure yours with a plug-in watt meter. Planning information only.</p>
+</div>
+</main>
+<footer class="foot">
+<div class="wrap grid buckets-foot">
+<div><b>Live City Life, Anywhere</b>
+<p>Guides and free planners for keeping water, lights, heat and a cold fridge when you live off the municipal grid or ride out outages.</p>
+<p><strong>Planning information only.</strong> This is not professional electrical, plumbing or well-system advice. Check nameplates and manufacturer charts, and use a licensed electrician or well contractor for anything wired or plumbed into your home.</p></div>
+<div><b>Power</b><ul>
+<li><a href="https://wellpump-generator-planner.vercel.app/">Well Pump Generator Planner</a></li>
+<li><a href="/power/cpap-oxygen-outage-runtime/">CPAP &amp; Oxygen Outage Runtime</a></li>
+<li><a href="/power/generator-fuel-runtime/">Generator Fuel Runtime</a></li>
+<li><a href="/power/wifi-desk-outage-backup/">Wi-Fi &amp; Desk Outage Backup</a></li>
+<li><a href="/power/car-generator-outage-runtime/">Car as Outage Generator</a></li>
+<li><a href="/guides/backup-power.html">Backup power guide</a></li>
+<li><a href="/power/">All Power tools &amp; guides</a></li></ul></div>
+<div><b>Water</b><ul>
+<li><a href="https://well-pressure-tank-sizer.vercel.app/">Well Pressure Tank Sizer</a></li>
+<li><a href="/water/sump-pump-backup-runtime/">Sump Pump Backup Runtime</a></li>
+<li><a href="/water/water-outage-boil-notice-planner/">Water Outage &amp; Boil Notice Planner</a></li>
+<li><a href="/water/water-heater-outage-hot-water/">Water Heater in an Outage</a></li>
+<li><a href="/guides/well-water.html">Well water guide</a></li>
+<li><a href="/water/">All Water tools &amp; guides</a></li></ul></div>
+<div><b>Heat &amp; Air</b><ul>
+<li><a href="https://space-heater-planner.vercel.app/">Space Heater Planner</a></li>
+<li><a href="/tools/snowblower-size-picker.html">Snowblower Size Picker</a></li>
+<li><a href="/guides/heat-without-the-grid.html">Heat without the grid</a></li>
+<li><a href="/heat-air/">All Heat &amp; Air</a></li></ul></div>
+<div><b>Safety</b><ul>
+<li><a href="/safety/smoke-co-alarm-planner/">Smoke &amp; CO Alarm Planner</a></li>
+<li><a href="/safety/fridge-freezer-outage-food-clock/">Fridge &amp; Freezer Outage Food Clock</a></li>
+<li><a href="/guides/winter-prep.html">Winter prep checklist</a></li>
+<li><a href="/safety/">All Safety tools &amp; guides</a></li>
+<li><a href="/about.html">About &amp; disclosure</a></li></ul></div>
+</div>
+<div class="wrap legal">As an Amazon Associate I earn from qualifying purchases (tag wellpumpplann-20). Brand names mentioned without an Amazon link are not affiliate links. © 2026 Live City Life, Anywhere.</div>
+</footer>
+<script src="/assets/hub.js" defer></script>
+<script>
+(function(){'use strict';
+var TAG='wellpumpplann-20',SLUG='water-heater-outage-hot-water';
+var HOT=(105-50)/(120-50),USABLE=0.7,SINK=2,EFF=0.85;
+var st={type:'pv',tank:'50',ppl:'2',flow:'2.5',bat:'1000',frz:'0'};
+function $(i){return document.getElementById(i)}
+function f(n){return Math.round(n).toLocaleString('en-US')}
+function d1(n){return n>=10?f(n):(Math.round(n*10)/10).toString()}
+function days(d){return d>=2?d1(d)+' <small>days</small>':d1(d*24)+' <small>hours</small>'}
+function amz(q,txt,cls){return '<a class="'+(cls||'')+'" rel="sponsored nofollow noopener" target="_blank" data-out="amazon" href="https://www.amazon.com/s?k='+encodeURIComponent(q)+'&tag='+TAG+'">'+txt+' <span style="font-weight:500">(Amazon)</span></a>'}
+function model(){
+ var ppl=+st.ppl,flow=+st.flow,min=Math.max(0,parseFloat($('i-min').value)||0),tank=+st.tank,t=st.type;
+ var perShower=flow*min*HOT,daily=ppl*(perShower+SINK),left=tank*USABLE;
+ var r={perShower:perShower,daily:daily,left:t==='tankless'?0:left,showers:perShower>0?Math.floor(left/perShower):0,stored:daily>0?left/daily:0,whDay:0,need:0,batDays:0,wh:0};
+ if(t==='pv'){var burnH=daily*8.33*(120-50)/(40000*0.8);r.whDay=burnH*200+24*5}
+ if(t==='tankless'){var flowH=flow>0?ppl*min/60+ppl*SINK/1.5/60:ppl*SINK/1.5/60;r.whDay=flowH*100+24*5+(+st.frz?12*100:0)}
+ if(t==='pv'||t==='tankless'){r.need=Math.max(0,parseFloat($('i-amp').value)||0)*120;var wh=st.bat==='custom'?Math.max(0,parseFloat($('i-wh').value)||0):+st.bat;r.wh=wh;r.batDays=r.whDay>0?wh*EFF/r.whDay:0}
+ return r;
+}
+function calc(){
+ var t=st.type,r=model(),vd=$('o-verdict'),x=$('o-extra'),shop='';x.style.display='none';
+ var plug=(t==='pv'||t==='tankless');
+ $('c-tank').style.display=t==='tankless'?'none':'';
+ $('c-bat').style.display=plug?'':'none';
+ $('g-frz').style.display=t==='tankless'?'grid':'none';
+ $('c-wh').classList.toggle('on',st.bat==='custom');
+ $('c-min').classList.toggle('on',st.flow!=='0');
+ $('o-left').textContent=t==='tankless'?'none (no tank)':'~'+f(r.left)+' gal';
+ $('o-day').textContent='~'+f(r.daily)+' gal';
+ $('o-wh').textContent=plug?'~'+f(r.whDay)+' Wh':'0 (no power)';
+ $('o-inv').textContent=plug?f(r.need)+' W pure sine':(t==='pilot'?'nothing':'240 V only');
+ if(t==='pilot'){
+  $('o-big').innerHTML='Still heats <small>no power needed</small>';
+  vd.className='verdict ok';vd.textContent='A standing-pilot gas tank keeps making hot water in an outage as long as gas and water are on. Nothing to buy.';
+  shop+=amz('battery operated carbon monoxide alarm','Battery CO alarm for the gas heater','alt');
+  shop+=amz('low flow shower head 1.8 gpm','1.8 gal/min shower head','alt');
+ } else if(plug && r.wh>0){
+  var ok=!(r.need>0&&st.bat==='200'&&r.need>900);
+  $('o-big').innerHTML=days(r.batDays)+' <small>of hot water on that battery</small>';
+  if(!ok){vd.className='verdict bad';vd.textContent='Your heater label says '+f(r.need)+' W. A 1500 VA UPS usually handles about 900 W. Get a bigger unit.'}
+  else if(r.batDays<1){vd.className='verdict warn';vd.textContent='Less than a day. Plug the heater in only when you need hot water, or get a bigger battery.'}
+  else{vd.className='verdict ok';vd.textContent='Works if the heater plugs into an outlet and the backup is pure sine with at least '+f(r.need)+' W continuous.'}
+  if(t==='tankless'&&+st.frz){x.style.display='block';x.textContent='Freeze protection is most of the battery use. If the battery runs low in a freeze, drain the unit per the manual.'}
+  shop+=amz('portable power station 1000Wh pure sine LiFePO4','Power station for the water heater');
+  shop+=amz('1500VA pure sine wave UPS','1500 VA pure sine UPS','alt');
+  shop+=amz('plug in electricity usage monitor watt meter','Plug-in watt meter (measure your heater)','alt');
+ } else {
+  var s=r.perShower>0?r.showers:0;
+  $('o-big').innerHTML=(t==='tankless'?'No hot water <small>until power is back</small>':(r.perShower>0?'~'+f(s)+' <small>hot showers left in the tank</small>':'~'+f(r.left)+' <small>gal of hot water left</small>'));
+  vd.className='verdict bad';
+  if(t==='tankless')vd.textContent='A gas tankless needs 120 V to light. No power, no hot water. Pick a backup battery above to see how long one would run it.';
+  else if(t==='pv')vd.textContent='A power-vent tank needs 120 V to fire. What\u2019s in the tank now is all you get: about '+days(r.stored).replace(/<[^>]+>/g,'')+' at your household\u2019s pace. Pick a backup above to keep it heating.';
+  else vd.textContent='It won\u2019t reheat without 240 V. What\u2019s in the tank now is all you get: about '+days(r.stored).replace(/<[^>]+>/g,'')+' at your household\u2019s pace. A power station can\u2019t run it.';
+  if(t==='elec'||t==='hp'){x.style.display='block';x.textContent='To reheat you need a 240 V generator (a 4,500 W element is common) and an electrician-installed transfer switch or interlock.'}
+  shop+=amz('portable propane tankless water heater outdoor shower','Portable propane water heater (outdoor use)');
+  shop+=amz('water heater insulation blanket','Water heater insulation blanket','alt');
+  shop+=amz('low flow shower head 1.8 gpm','1.8 gal/min shower head','alt');
+ }
+ $('o-shop').innerHTML=shop;
+}
+function mark(id,key){[].forEach.call($(id).querySelectorAll('button'),function(x){x.setAttribute('aria-pressed',String(x.getAttribute('data-v'))===String(st[key])?'true':'false')})}
+function bind(id,key){var el=$(id);el.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;st[key]=b.getAttribute('data-v');mark(id,key);calc()});mark(id,key)}
+bind('g-type','type');bind('g-tank','tank');bind('g-ppl','ppl');bind('g-flow','flow');bind('g-bat','bat');bind('g-frz','frz');
+['i-min','i-wh','i-amp'].forEach(function(i){$(i).addEventListener('input',calc)});
+document.addEventListener('click',function(e){var a=e.target.closest('a[data-out]');if(!a)return;try{var n=+(localStorage.getItem('bank-out-clicks')||0)+1;localStorage.setItem('bank-out-clicks',n)}catch(_){};if(window.va)window.va('event',{name:'outbound',data:{dest:a.getAttribute('data-out'),page:SLUG}})});
+window.__wh={st:st,model:model,calc:calc};
+calc();
+})();
+</script>
+<script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+<script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>
